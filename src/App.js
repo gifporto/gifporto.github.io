@@ -2,7 +2,6 @@ import React from 'react';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Layout from './components/Layout';
 import Website from './components/Website';
-import AllProject from './components/AllProject';
 
 const App = () => {
   
@@ -12,7 +11,6 @@ const App = () => {
         <Routes>
           <Route element={<Layout/>}>
             <Route path="/" element={<Website />} />
-            <Route path="/allproject" element={<AllProject />} />
           </Route>
         </Routes>
       </BrowserRouter>
