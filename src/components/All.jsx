@@ -177,8 +177,8 @@ const All = () => {
                 <div className="w-full">
                     {/* opsi 1 */}
                     <div className='flex flex-wrap test1 testall'>
-                        <p className="font-medium text-dark mb-10 leading-relaxed">
-                        Saya merupakan lulusan S! Informatika yang memiliki kemampuan dalam UI/UX Designer, Front End Dev, dan Desain Grafis. Saya menikmati mengubah masalah kompleks menjadi desain yang sederhana, indah, dan intuitif.
+                        <p className="font-medium text-secondary mb-10 leading-relaxed">
+                        Saya merupakan lulusan S1 Informatika yang memiliki kemampuan dalam UI/UX Designer, Front End Dev, dan Desain Grafis. Saya menikmati mengubah masalah kompleks menjadi desain yang sederhana, indah, dan intuitif.
                             <p className='my-4 text-secondary'>
                             Pekerjaan saya adalah membangun tampilan situs web Anda agar fungsional dan ramah pengguna namun tetap menarik. Selain itu, saya menambahkan sentuhan pribadi pada produk Anda dan memastikan bahwa produk tersebut menarik perhatian dan mudah digunakan. Tujuan saya adalah menyampaikan pesan dan identitas Anda dengan cara yang paling kreatif. Saya telah membuat desain web untuk banyak perusahaan merek terkenal.
                             </p>

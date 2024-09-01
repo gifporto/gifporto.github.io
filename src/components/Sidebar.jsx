@@ -72,7 +72,7 @@ const Sidebar = () => {
                         </div>
                     </div>
                 </div>
-                <div className="wrapperprofile">
+                <div className="wrapperprofile mt-4">
                     <h3 class="text1">Kontak</h3>
                     <p class="font-medium text-secondary mb-4 leading-relaxed">Silahkan menghubungi kontak yang di bawah ini untuk berdiskusi lebih lanjut.</p>
                     <div class="flex flex-wrap mb-5 relative z-10">
@@ -121,8 +121,6 @@ const Sidebar = () => {
                 </div>
             </div>
         </div>
-
-        
     )
 }
 
