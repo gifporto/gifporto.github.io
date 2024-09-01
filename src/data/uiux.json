@@ -1,24 +1,24 @@
 [
     {
       "juduluiux": "Shift Mobile Attendance.",
-      "deskripsiuiux": "to Tries Digital Indonesia",
+      "deskripsiuiux": "Sebagai presensi untuk karyawan dan management projek di PT.Tries Digital Indonesia",
       "imageuiux": "./img/ui-tries.png"
     },
   
     {
       "juduluiux": "Product Catalog.",
-      "deskripsiuiux": "to Cakra Agro",
+      "deskripsiuiux": "Sebagai produk katalog yang menawarkan produk dan management staff di PT.Cakra Agro",
       "imageuiux": "./img/ui-cakra.png"
     },
   
     {
       "juduluiux": "Bank Sampah.",
-      "deskripsiuiux": "to Mobile Project",
+      "deskripsiuiux": "sebagai Mobile Project, mengetahui bank sampah terdekat dan menjual sampah rumahtangga",
       "imageuiux": "./img/ui-sampah.png"
     },
     {
       "juduluiux": "E-Skrips.",
-      "deskripsiuiux": "to Penelitian Skripsi",
+      "deskripsiuiux": "sebagai Penelitian Skripsi, dengan fitur pengajuan dan pemantauan skripsi mahasiswa UAD, ",
       "imageuiux": "./img/ui-eskrips.png"
     }
 ]

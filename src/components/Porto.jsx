@@ -26,36 +26,35 @@ const Porto = () => {
         if (tab === "frontend") handleShowMore2();
         else if (tab === "desain") handleShowMore();
         else if (tab === "blender") handleShowMore1();
+        else if (tab === "uiux") handleShowUIUX();
     };
 
     // showmore
     const [numImagesToShow, setNumImagesToShow] = useState(4); // Initial number of images to show
     const [numImagesToShow1, setNumImagesToShow1] = useState(3); // Initial number of images to show
-    const [numImagesToShow2, setNumImagesToShow2] = useState(2); // Initial number of images to show
+    const [numImagesToShow2, setNumImagesToShow2] = useState(3); // Initial number of images to show
+    const [numImagesToShow3, setNumImagesToShow3] = useState(3); // Initial number of images to show
     const [showAds, setShowAds] = useState(false); // State to control ad visibility
     const containerRef = useRef(null); // Reference to the container for IntersectionObserver
     const [hasButtonBeenClicked, setHasButtonBeenClicked] = useState(false);
     const [hasButtonBeenClicked1, setHasButtonBeenClicked1] = useState(false);
     const [hasButtonBeenClicked2, setHasButtonBeenClicked2] = useState(false);
+    const [hasButtonBeenClicked3, setHasButtonBeenClicked3] = useState(false);
 
     useEffect(() => {
         const observer = new IntersectionObserver((entries) => {
             entries.forEach((entry) => {
                 if (entry.isIntersecting) {
-                    // If the container is intersecting with the viewport, set showAds to true
                     setShowAds(true);
-                    // Disconnect the observer since we don't need to observe anymore
                     observer.disconnect();
                 }
             });
         });
 
-        // Start observing the container
         if (containerRef.current) {
             observer.observe(containerRef.current);
         }
 
-        // Clean up the observer when the component unmounts
         return () => {
             observer.disconnect();
         };
@@ -72,6 +71,10 @@ const Porto = () => {
     const handleShowMore2 = () => {
         setNumImagesToShow2((prevNum) => prevNum + 100); // Increase the number of images to show
         setHasButtonBeenClicked2(true); // Set the flag to true
+    };
+    const handleShowUIUX = () => {
+        setNumImagesToShow3((prevNum) => prevNum + 100); // Increase the number of images to show
+        setHasButtonBeenClicked3(true); // Set the flag to true
     };
 
     // const cardVariants = {
@@ -197,7 +200,7 @@ const Porto = () => {
                                 <div className="line"></div>
                             </div>
                         </motion.li>
-                        {datauiux.map((card, i) => (
+                        {datauiux.slice(0, numImagesToShow3).map((card, i) => (
                         <motion.div key={i} className="md:w-1/3" initial="offscreen" whileInView="onscreen" viewport={{ amount: 0.2 }} variants={cardVariants2}>
                             <li class="w-full item_wrap p-4 uiux all">
                                 <img src={card.imageuiux} alt="" class="px-4 md:px-0 w-full drop-shadow-lg dark:hover:drop-shadow-[0_8px_5px_#F4D160] hover:scale-110 dark:decoration-purple-200 ease-linear transition-all duration-500 rounded-md"/>
@@ -208,6 +211,17 @@ const Porto = () => {
                             </li>
                         </motion.div>
                         ))}
+                        <li class="w-full item_wrap mx-auto text-center uiux all">
+                            {showAds && (
+                                <div ref={containerRef} className="ad-container">
+                                    {/* Place your ad component here */}
+                                    <img src="your-ad-image-url" alt="Advertisement" />
+                                </div>
+                            )}
+                            {!hasButtonBeenClicked3 && (
+                                <button onClick={handleShowUIUX} className="btn-custom mx-auto text-center desain all">Show More</button>
+                            )}
+                        </li>
                     </div>
 
                     <div className='w-full flex flex-wrap'>
