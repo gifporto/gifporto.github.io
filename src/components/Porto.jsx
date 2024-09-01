@@ -62,15 +62,15 @@ const Porto = () => {
     }, []);
 
     const handleShowMore = () => {
-        setNumImagesToShow((prevNum) => prevNum + 4); // Increase the number of images to show
+        setNumImagesToShow((prevNum) => prevNum + 100); // Increase the number of images to show
         setHasButtonBeenClicked(true); // Set the flag to true
     };
     const handleShowMore1 = () => {
-        setNumImagesToShow1((prevNum) => prevNum + 3); // Increase the number of images to show
+        setNumImagesToShow1((prevNum) => prevNum + 100); // Increase the number of images to show
         setHasButtonBeenClicked1(true); // Set the flag to true
     };
     const handleShowMore2 = () => {
-        setNumImagesToShow2((prevNum) => prevNum + 8); // Increase the number of images to show
+        setNumImagesToShow2((prevNum) => prevNum + 100); // Increase the number of images to show
         setHasButtonBeenClicked2(true); // Set the flag to true
     };
 
@@ -148,7 +148,7 @@ const Porto = () => {
                             </div>
                         </motion.li>
                         {dataweb.slice(0, numImagesToShow2).map((card, i) => (
-                        <motion.div key={i} className="md:w-1/2" initial="offscreen" whileInView="onscreen" viewport={{ amount: 0.2 }} variants={cardVariants2}>
+                        <motion.div key={i} className="lg:w-1/2 xl:w-1/3" initial="offscreen" whileInView="onscreen" viewport={{ amount: 0.2 }} variants={cardVariants2}>
                             <li class="w-full p-4 item_wrap frontend all">
                                 <div class="bg-white rounded-xl shadow-lg dark:bg-dark p-4 dark:hover:shadow-primary2 duration-500 transition-all ease-linear group">
                                     <img className="w-full drop-shadow-sm shadow-md group-hover:scale-105 ease-linear duration-200 rounded-md" src={card.imageweb} alt="home" />

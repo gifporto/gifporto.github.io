@@ -15,6 +15,11 @@
       "juduluiux": "Bank Sampah.",
       "deskripsiuiux": "to Mobile Project",
       "imageuiux": "./img/ui-sampah.png"
+    },
+    {
+      "juduluiux": "E-Skrips.",
+      "deskripsiuiux": "to Penelitian Skripsi",
+      "imageuiux": "./img/ui-eskrips.png"
     }
 ]
   
