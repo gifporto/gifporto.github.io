@@ -18,6 +18,10 @@
     @apply text-dark dark:text-white font-medium inline-block text-sm py-3 px-8 capitalize text-center cursor-pointer rounded-md ease-linear duration-200;
   }
 
+  .btn3 {
+    @apply text-dark dark:text-white font-medium inline-block text-xs capitalize text-center cursor-pointer rounded-md ease-linear duration-200;
+  }
+
   .tabs_wrap2 ul li:hover,
   .tabs_wrap2 ul li.active {
     @apply text-primary dark:text-primary2 ;
@@ -73,16 +77,33 @@
       @apply w-1/2 md:w-1/3 lg:w-1/5 py-5;
   }
 
-  .wrappernewtool {
-      @apply w-1/5 md:w-[60px] lg:w-[60px] py-5;
+  /* .wrappernewtool {
+      @apply relative w-1/5 md:w-[60px] lg:w-[60px] py-5;
   }
 
   .wrappernewtool .tooltiptext {
-    @apply invisible opacity-0 transition duration-500 rounded p-4 bg-white dark:bg-dark shadow-md dark:shadow-primary2;
+    @apply absolute left-full top-1/2 transform -translate-y-1/2 ml-2 invisible opacity-0 transition duration-500 rounded p-4 bg-white dark:bg-dark shadow-md dark:shadow-primary2;
   }
   .wrappernewtool:hover .tooltiptext {
-    @apply visible opacity-100 transition duration-500;
+    @apply z-30 visible opacity-100 transition duration-500;
+  } */
+
+  .wrappernewtool {
+    @apply relative w-1/5 md:w-[60px] lg:w-[60px] transition-all;
   }
+  
+  .containernewtool {
+    @apply md:m-3 m-2 hover:scale-75 transition ease-in-out duration-500;
+  }
+  
+  .wrappernewtool .tooltiptext {
+    @apply invisible whitespace-nowrap transition duration-500 rounded-xl p-4 bg-white dark:bg-dark shadow-md dark:shadow-primary2 absolute left-1/2 bottom-full transform -translate-x-1/2 translate-y-1; /* Tooltip berada di atas */
+  }
+  
+  .wrappernewtool:hover .tooltiptext {
+    @apply visible min-w-max w-auto transition duration-500;
+  }
+  
 
   /* .wrappertexttool{
     @apply p-4 text-sm rounded-lg;
@@ -96,9 +117,9 @@
       @apply container mx-auto flex p-2;
   }
 
-  .containernewtool{
+  /* .containernewtool{
       @apply container mx-auto flex p-2  hover:scale-75 transition ease-in-out duration-500;
-  }
+  } */
 
   .toolimage{
       @apply w-12 hover:scale-125 transition duration-500 ease-in-out;
@@ -125,7 +146,7 @@
   /* =================== start portofolio =================== */
   /* button */
   .btn {
-    @apply text-dark font-medium bg-slate-200 inline-block text-sm py-3 px-8 capitalize text-center cursor-pointer rounded-md ease-linear duration-200;
+    @apply text-dark font-medium bg-slate-200 inline-block text-xs py-1 px-2 lg:text-sm lg:py-2 lg:px-8 capitalize text-center cursor-pointer rounded-md ease-linear duration-200;
   }
 
   .btn-primary {
