@@ -50,7 +50,7 @@ const All = () => {
     return (
         <div className="flex flex-wrap">
             {/* bottom bar mobile */}
-            <div className="tabs_wrap2 fixed bottom-0 left-0 right-0 m-1 py-1 bg-white dark:bg-dark rounded-lg shadow lg:hidden z-30">
+            <div className="tabs_wrap2 fixed bottom-0 left-0 right-0 m-1 py-1 bg-white  bg-opacity-10 backdrop-filter backdrop-blur-lg rounded-lg shadow lg:hidden z-30">
                 <ul className="flex justify-end gap-2 py-2 px-8">
                     <li className={activeTab2 === "test1" ? "btn3 active" : "btn3"} onClick={() => handle2TabClick("test1")}>
                         About
@@ -89,27 +89,9 @@ const All = () => {
                 <div className="w-full">
                     {/* opsi 1 */}
                     <div className='flex flex-wrap test1 testall'>
-                        <p className="font-medium text-secondary mb-10 leading-relaxed">
-                        Saya merupakan lulusan S1 Informatika yang memiliki kemampuan dalam UI/UX Designer, Front End Dev, dan Desain Grafis. Saya menikmati mengubah masalah kompleks menjadi desain yang sederhana, indah, dan intuitif.
-                            <p className='my-4 text-secondary'>
-                            Pekerjaan saya adalah membangun tampilan situs web Anda agar fungsional dan ramah pengguna namun tetap menarik. Selain itu, saya menambahkan sentuhan pribadi pada produk Anda dan memastikan bahwa produk tersebut menarik perhatian dan mudah digunakan. Tujuan saya adalah menyampaikan pesan dan identitas Anda dengan cara yang paling kreatif. Saya telah membuat desain web untuk banyak perusahaan merek terkenal.
-                            </p>
-                        </p>
-                        <h4 class="text1">Clients</h4>
-                        <div class="w-full bg-slate-800 rounded-xl">
-                            <div class="flex flex-wrap items-center justify-center">
-                                {dataclient.map((card, i) => (
-                                    <div key={i}>
-                                        <a href={card.linkclient}>
-                                            <img class="max-w-[100px] lg:max-w-[120px] mx-4 py-4 transition duration-500 hover:scale-110" src={card.imageclient} alt=""/>
-                                        </a>
-                                    </div>
-                                ))}
-                            </div>
-                        </div>
-                        <h4 class="text1 mt-10">Skills</h4>
+                        <h4 class="text1">Skills</h4>
                         <div class="grid gap-4 lg:grid-cols-2">
-                            <div class="wrapperjob">
+                            <div class="wrapperjob ">
                                 <div class="containertool">
                                     <div class="flex justify-center w-1/5 mr-2 text-primary dark:text-primary2 fill-current">
                                         <svg role="img" xmlns="http://www.w3.org/2000/svg" width="70" viewBox="0 0 45.38 35.45">
@@ -130,7 +112,7 @@ const All = () => {
                                         </svg>
                                     </div>
                                     <div class="px-0 flex-1">
-                                        <h3 class="tools-h3">UIUX Design</h3>
+                                        <h3 class="tools-h3">UI/UX Design</h3>
                                         <p class="text-sm mt-1 text-secondary">Menciptakan antarmuka yang intuitif dan pengalaman pengguna yang optimal.</p>
                                     </div>
                                 </div>
@@ -162,6 +144,25 @@ const All = () => {
                                 </div>
                             </div>
                         </div>
+                        <h4 class="text1 mt-10">Clients</h4>
+                        <div class="w-full bg-slate-800 rounded-xl">
+                            <div class="flex flex-wrap items-center justify-center">
+                                {dataclient.map((card, i) => (
+                                    <div key={i}>
+                                        <a href={card.linkclient}>
+                                            <img class="max-w-[100px] lg:max-w-[120px] mx-4 py-4 transition duration-500 hover:scale-110" src={card.imageclient} alt=""/>
+                                        </a>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                        
+                        <p className="mt-10 font-medium text-secondary leading-relaxed">
+                        Saya merupakan lulusan <span className='text-primary dark:text-primary2'>S1 Informatika</span> yang memiliki kemampuan dalam UI/UX Designer, Front End Dev, dan Desain Grafis. Saya menikmati mengubah masalah kompleks menjadi desain yang sederhana, indah, dan intuitif.
+                            <p className='my-4 text-secondary'>
+                            Pekerjaan saya adalah membangun tampilan situs web Anda agar fungsional dan ramah pengguna namun tetap menarik. Selain itu, saya menambahkan sentuhan pribadi pada produk Anda dan memastikan bahwa produk tersebut menarik perhatian dan mudah digunakan. Tujuan saya adalah menyampaikan pesan dan identitas Anda dengan cara yang paling kreatif. Saya telah membuat desain web untuk banyak perusahaan merek terkenal.
+                            </p>
+                        </p>
                     </div>
 
                     {/* opsi 2 */}
@@ -326,28 +327,26 @@ const All = () => {
                             <div className='frontend all'>
                                 <div className='grid gap-4 lg:grid-cols-3'>
                                     {dataweb.map((card, i) => (
-                                    <div key={i}>
-                                        <li class="w-full ">
-                                            <div class="bg-slate-100 rounded-xl dark:bg-slate-800 p-4 dark:hover:shadow-primary2 ease-linear group">
-                                                <img className="w-full drop-shadow-sm shadow-md group-hover:scale-105 ease-linear duration-200 rounded-md" src={card.imageweb} alt="home" />
-                                                <div class="justify-between">
-                                                    <div class="mb-2 pt-5">
-                                                        <h4 class="card__title">{card.judulweb}</h4>
-                                                        <p class="paragraph">{card.deskripsiweb}</p>
+                                    <div key={i} className="bg-slate-100 rounded-xl dark:bg-slate-800 p-4 dark:hover:shadow-primary2 ease-linear group"> 
+                                        <li class="w-full">
+                                            <img className="w-full drop-shadow-sm shadow-md group-hover:scale-105 ease-linear duration-200 rounded-md" src={card.imageweb} alt="home" />
+                                            <div class="">
+                                                <div class="mb-2 pt-5">
+                                                    <h4 class="card__title">{card.judulweb}</h4>
+                                                    <p class="paragraph">{card.deskripsiweb}</p>
+                                                </div>
+                                                <div class="justify-between flex pt-2">
+                                                    <div>
+                                                        <a href={card.linkweb} class="more-btn">Lihat Detail</a>
                                                     </div>
-                                                    <div class="justify-between flex pt-2">
-                                                        <div>
-                                                            <a href={card.linkweb} class="more-btn">Lihat Detail</a>
-                                                        </div>
-                                                        <div class="justify-between flex">
-                                                            <p class="paragraph pr-2">Make by:</p>
-                                                            <svg class="logo-frontend" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                                                <path d={card.imgtool1}/>
-                                                            </svg>
-                                                            <svg class="logo-frontend" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                                                <path d={card.imgtool2}/>
-                                                            </svg>
-                                                        </div>
+                                                    <div class="justify-between flex">
+                                                        <p class="paragraph pr-2">Make by:</p>
+                                                        <svg class="logo-frontend" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                            <path d={card.imgtool1}/>
+                                                        </svg>
+                                                        <svg class="logo-frontend" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                            <path d={card.imgtool2}/>
+                                                        </svg>
                                                     </div>
                                                 </div>
                                             </div>

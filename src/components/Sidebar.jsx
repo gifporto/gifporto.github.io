@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { TypeAnimation } from 'react-type-animation';
+import Canvas from '../canvas';
 
 const Sidebar = () => {
     // Dark mode
@@ -23,10 +24,13 @@ const Sidebar = () => {
         <div className="flex flex-wrap">
             {/* kiri */}
             <div className="w-full">
+                {/* <div className="absolute w-full h-60 z-10">
+                    <Canvas/>
+                </div> */}
                 <div className='wrapperprofile'>
                     <div className='text-center'>
-                        <div className="relative">                       
-                            <img src="./img/myfoto1.png" alt="Taufiq Aditya" className="relative z-10 max-w-full mx-auto w-40" />
+                        <div className="relative"> 
+                            <img src="./img/myfoto1.png" alt="Taufiq Aditya" className="relative z-20 max-w-full mx-auto w-40" />
                             <div className="absolute rounded-full w-96 h-96 lg:w-80 lg:h-80 bg-primary dark:bg-primary2 bottom-8 left-1/2 -translate-x-1/2 transition-all duration-300 ease-out"></div>
                         </div>
                         <div className="block font-bold text-dark text-3xl mt-1 lg:text-xl dark:text-white transition-all ease-in duration-500 z-20">
