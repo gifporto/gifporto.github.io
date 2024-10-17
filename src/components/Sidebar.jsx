@@ -59,7 +59,7 @@ const Sidebar = () => {
                         </p>
                         <div className='mt-4 flex justify-between'>
                             <a className='more-btn' href="https://drive.google.com/drive/folders/1M_XfxosvBDx4xMqYK0prS2Ku7xGkSZ0p?usp=drive_link">
-                                Arsip Saya
+                                My Archive
                             </a>
                             <div className="flex items-center">
                                 <input type="checkbox" className="hidden" id="dark-toggle" onClick={handleDarkToggle}/>
@@ -91,8 +91,8 @@ const Sidebar = () => {
                     </div>
                 </div>
                 <div className="wrapperprofile mt-4">
-                    <h3 className="text1">Kontak</h3>                 
-                    <p className="font-medium text-secondary mb-4 leading-relaxed">Silahkan menghubungi:</p>
+                    <h3 className="text1">Contact</h3>                 
+                    <p className="font-medium text-secondary mb-4 leading-relaxed">Please contact:</p>
                     <div className="flex flex-wrap mb-5 relative z-10">
                         {/* <!-- Whatsapp --> */}
                         <a href="https://wa.me/qr/N6JXGQNJ5JD6J1" className="sosmed">

@@ -99,8 +99,8 @@ const All = () => {
                                         </svg>
                                     </div>
                                     <div class="px-0 flex-1">
-                                        <h3 class="tools-h3">FrontEnd Dev</h3>
-                                        <p class="text-sm mt-1 text-secondary">Mengembangkan website responsif dan mudah berinteraksi dengan fitur.</p>
+                                        <h3 class="tools-h3">FrontEnd Developer</h3>
+                                        <p class="text-sm mt-1 text-secondary">Developing a responsive website that is easy to interact with features.</p>
                                     </div>
                                 </div>
                             </div>
@@ -113,7 +113,7 @@ const All = () => {
                                     </div>
                                     <div class="px-0 flex-1">
                                         <h3 class="tools-h3">UI/UX Design</h3>
-                                        <p class="text-sm mt-1 text-secondary">Menciptakan antarmuka yang intuitif dan pengalaman pengguna yang optimal.</p>
+                                        <p class="text-sm mt-1 text-secondary">Creating an intuitive interface and an optimal user experience.</p>
                                     </div>
                                 </div>
                             </div>
@@ -125,8 +125,8 @@ const All = () => {
                                         </svg>
                                     </div>
                                     <div class="px-0 flex-1">
-                                        <h3 class="tools-h3">Design Graphic</h3>
-                                        <p class="text-sm mt-1 text-secondary">Desain yang estetis dan komunikatif untuk memperkuat pesan dan identitas merek.</p>
+                                        <h3 class="tools-h3">Graphic Design </h3>
+                                        <p class="text-sm mt-1 text-secondary">Aesthetic and communicative design to strengthen the message and brand identity</p>
                                     </div>
                                 </div>
                             </div>
@@ -139,7 +139,7 @@ const All = () => {
                                     </div>
                                     <div class="px-0 flex-1">
                                         <h3 class="tools-h3">Social Media Specialist</h3>
-                                        <p class="text-sm mt-1 text-secondary">Mengoptimalkan media untuk meningkatkan jangkauan dan keterlibatan.</p>
+                                        <p class="text-sm mt-1 text-secondary">Optimizing media to enhance reach and engagement.</p>
                                     </div>
                                 </div>
                             </div>
@@ -158,10 +158,8 @@ const All = () => {
                         </div>
                         
                         <p className="mt-10 font-medium text-secondary leading-relaxed">
-                        Saya merupakan lulusan <span className='text-primary dark:text-primary2'>S1 Informatika</span> yang memiliki kemampuan dalam UI/UX Designer, Front End Dev, dan Desain Grafis. Saya menikmati mengubah masalah kompleks menjadi desain yang sederhana, indah, dan intuitif.
-                            <p className='my-4 text-secondary'>
-                            Pekerjaan saya adalah membangun tampilan situs web Anda agar fungsional dan ramah pengguna namun tetap menarik. Selain itu, saya menambahkan sentuhan pribadi pada produk Anda dan memastikan bahwa produk tersebut menarik perhatian dan mudah digunakan. Tujuan saya adalah menyampaikan pesan dan identitas Anda dengan cara yang paling kreatif. Saya telah membuat desain web untuk banyak perusahaan merek terkenal.
-                            </p>
+                            I am a <span className='text-primary dark:text-primary2'>bachelor’s degree graduate in Computer Science</span> with skills in UI/UX Design, Front End Development, and Graphic Design. I enjoy transforming complex problems into simple, beautiful, and intuitive designs.
+                            My job is to build your website's appearance to be functional and user-friendly while still being visually appealing. Additionally, I add a personal touch to your product and ensure that it captures attention and is easy to use. My goal is to convey your message and identity in the most creative way. I have created web designs for many well-known brand companies.
                         </p>
                     </div>
 
@@ -198,10 +196,10 @@ const All = () => {
                                 <div className="wrapperabout2 min-h-full lg:ml-2">
                                     <ul class="font-medium text-secondary relative z-10">
                                         <li>
-                                            <p class="inline-block text-base mb-3">• Universitas Ahmad Dahlan <br/><span class="about-p">2020-2024</span> (Informatika)</p>
+                                            <p class="inline-block text-base mb-3">• Ahmad Dahlan University <br/><span class="about-p">2020-2024</span> (Bachelor in Computer Science)</p>
                                         </li>
                                         <li>
-                                            <p class="inline-block text-base mb-3">• SMA Negeri 1 Prambanan <br/><span class="about-p">2018-2020</span> (IPA)</p>
+                                            <p class="inline-block text-base mb-3">• SMA Negeri 1 Prambanan <br/><span class="about-p">2018-2020</span> (Natural Sciences)</p>
                                         </li>
                                     </ul>
                                     <div className="w-48 absolute -right-10 -bottom-5 fill-primary/30 dark:fill-primary2/30">
@@ -337,7 +335,7 @@ const All = () => {
                                                 </div>
                                                 <div class="justify-between flex pt-2">
                                                     <div>
-                                                        <a href={card.linkweb} class="more-btn">Lihat Detail</a>
+                                                        <a href={card.linkweb} class="more-btn">More Detail</a>
                                                     </div>
                                                     <div class="justify-between flex">
                                                         <p class="paragraph pr-2">Make by:</p>
