@@ -41,10 +41,6 @@ const Shirt = () => {
         geometry={nodes.defaultMaterial_1.geometry}
         material={materials.wire_134006006}
       />
-      {/* <mesh rotation={[0, 80, 180]} scale={[1.5, 1.5, 1.5]}
-      geometry={nodes.Curve001.geometry}
-      material={materials.Material005}
-      /> */}
     </group>
   );
 };
