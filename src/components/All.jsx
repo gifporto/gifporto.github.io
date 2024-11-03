@@ -86,7 +86,11 @@ const All = () => {
                             <div className='text-center'>
                                 <div className="relative"> 
                                     <img src="./img/myfoto1.png" alt="Taufiq Aditya" className="relative z-20 max-w-full mx-auto w-40" />
-                                    <div className="absolute rounded-full w-96 h-96 lg:w-80 lg:h-80 bg-primary dark:bg-primary2 bottom-8 left-1/2 -translate-x-1/2 transition-all duration-300 ease-out"></div>
+                                    <div className="absolute rounded-full w-96 h-96 lg:w-80 lg:h-80 bg-primary dark:bg-primary2 bottom-12 left-3/4 dark:left-1/4 -translate-x-1/2 transition-all transform duration-300 ease-out"></div>
+                                    {/* <div className="absolute w-96 h-96 lg:w-80 lg:h-80 bottom-12 left-1/2 -translate-x-1/2">
+                                        
+                                    </div> */}
+
                                 </div>
                                 <div className="block font-bold text-dark text-3xl mt-1 lg:text-xl dark:text-white transition-all ease-in duration-500 z-20">
                                     Taufiq Aditya Putra

@@ -18,7 +18,7 @@
   
   /* =================== start all =================== */
   .wrapperprofile {
-    @apply relative overflow-hidden m-2 px-4 py-6 bg-white dark:bg-dark shadow-lg rounded-xl;
+    @apply relative overflow-hidden m-2 px-4 py-6  bg-white/20 dark:bg-dark/20 shadow-lg rounded-xl;
   }
 
   .wrapperjob {

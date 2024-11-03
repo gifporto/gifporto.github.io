@@ -10,7 +10,7 @@ const Layout = () => {
       <div class="fixed -top-48 -right-48 dark:top-auto dark:right-auto dark:-bottom-48 dark:-left-48 bulat1"></div>
       <div class="fixed -bottom-48 -left-48 dark:bottom-auto dark:left-auto dark:-top-48 dark:-right-48 bulat2"></div>
 
-      <div className="md:-ml-6 md:-mb-6 -ml-3 -mb-3 md:w-40 md:h-40 w-36 h-36 fixed z-50 sm:left-0 bottom-0 md:right-0">
+      <div className="md:-ml-6 -ml-3 -mb-6 md:w-40 md:h-40 w-36 h-36 fixed z-50 sm:left-0 bottom-0 md:right-0">
         <Canvas/>
       </div>
       <div className="container flex flex-wrap">
