@@ -14,12 +14,7 @@ const Layout = () => {
         <Canvas/>
       </div>
       <div className="container flex flex-wrap">
-        <div className="static lg:fixed lg:w-[276px]">
-          <Sidebar />
-        </div>
-        <div className="lg:ml-[276px]">
           <Outlet />
-        </div>
       </div>
     </div>
   );
