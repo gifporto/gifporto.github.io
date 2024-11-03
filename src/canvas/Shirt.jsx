@@ -1,10 +1,11 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { useGLTF } from '@react-three/drei';
+import { useFrame } from '@react-three/fiber';
 
 const Shirt = () => {
-  // const { nodes, materials } = useGLTF('/gifour.glb');
   const { nodes, materials } = useGLTF('/robocat.glb');
   const [scale, setScale] = useState([0.005, 0.005, 0.005]);
+  const groupRef = useRef();
 
   useEffect(() => {
     console.log(nodes); // Debugging untuk melihat struktur nodes
@@ -14,9 +15,9 @@ const Shirt = () => {
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth < 768) { // Ukuran mobile
-        setScale([0.007, 0.007, 0.007]); // Skala untuk mobile
+        setScale([0.005, 0.005, 0.005]); // Skala untuk mobile
       } else { // Ukuran desktop
-        setScale([0.007, 0.007, 0.007]); // Skala untuk desktop
+        setScale([0.005, 0.005, 0.005]); // Skala untuk desktop
       }
     };
 
@@ -28,8 +29,14 @@ const Shirt = () => {
     };
   }, []);
 
+  useFrame(() => {
+    if (groupRef.current) {
+      groupRef.current.rotation.y += 0.01; // Menambahkan rotasi berputar terus menerus
+    }
+  });
+
   return (
-    <group scale={scale} position={[0, 0, 0]}>
+    <group ref={groupRef} scale={scale} position={[0, 0, 0]}>
       <mesh
         geometry={nodes.defaultMaterial_1.geometry}
         material={materials.wire_134006006}
