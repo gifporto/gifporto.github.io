@@ -1,0 +1,38 @@
+[
+  {
+    "title": "Figma",
+    "img": "./icon/figma.svg"
+  },
+  {
+    "title": "CorelDraw",
+    "img": "./icon/corel.svg"
+  },
+  {
+    "title": "Premiere",
+    "img": "./icon/premiere.svg"
+  },
+  {
+    "title": "React",
+    "img": "./icon/react.svg"
+  },
+  {
+    "title": "Laravel",
+    "img": "./icon/laravel.svg"
+  },
+  {
+    "title": "CodeIgniter",
+    "img": "./icon/codeigniter.svg"
+  },
+  {
+    "title": "Vue",
+    "img": "./icon/vue.svg"
+  },
+  {
+    "title": "Tailwind",
+    "img": "./icon/tailwind.svg"
+  },
+  {
+    "title": "Bootstrap",
+    "img": "./icon/bootstrap.svg"
+  }
+]

@@ -1,0 +1,38 @@
+[
+  {
+    "title": "Creative Design Internship",
+    "date": "2023",
+    "description": "by PT. MSV Studio AMIKOM",
+    "img": "./img/sertif1.png"
+  },
+  {
+    "title": "UI/UX Design Internship",
+    "date": "2023",
+    "description": "by PT. TRIES Digital Indonesia",
+    "img": "./img/sertif2.png"
+  },
+  {
+    "title": "2nd Place in Poster Competition",
+    "date": "2022",
+    "description": "by HMTIF UAD",
+    "img": "./img/sertif3.png"
+  },
+  {
+    "title": "Favorite Poster Competition",
+    "date": "2022",
+    "description": "by UAD Industrial Technology",
+    "img": "./img/sertif5.png"
+  },
+  {
+    "title": "Design Committee Member",
+    "date": "2022",
+    "description": "by BEM UAD",
+    "img": "./img/sertif6.png"
+  },
+  {
+    "title": "3rd Place in Poster Competition",
+    "date": "2021",
+    "description": "by HMTIF UAD",
+    "img": "./img/sertif4.png"
+  }
+]

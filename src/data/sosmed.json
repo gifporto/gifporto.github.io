@@ -1,0 +1,26 @@
+[
+  {
+    "id": "whatsapp",
+    "value": "085713667446",
+    "url": "https://wa.me/qr/N6JXGQNJ5JD6J1",
+    "icon": "IconWhatsapp"
+  },
+  {
+    "id": "linkedin",
+    "value": "taufiq aditya putra",
+    "url": "https://www.linkedin.com/in/taufiq-aditya-putra-140402292/?originalSubdomain=id",
+    "icon": "IconLinkedin"
+  },
+  {
+    "id": "gmail",
+    "value": "taufiqadityaputra@gmail.com",
+    "url": "mailto:taufiqadityaputra@gmail.com",
+    "icon": "IconGmail"
+  },
+  {
+    "id": "github",
+    "value": "github.com/gifporto",
+    "url": "https://github.com/gifporto?tab=repositories",
+    "icon": "IconGithub"
+  }
+]

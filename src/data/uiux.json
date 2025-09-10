@@ -1,0 +1,26 @@
+[
+  {
+    "title": "Shift Mobile Attendance.",
+    "date": "2023",
+    "description": "As attendance for employees and project management at PT. Tries Digital Indonesia.",
+    "img": "./img/ui-tries.png"
+  },
+  {
+    "title": "Product Catalog.",
+    "date": "2023",
+    "description": "As a product catalog that offers products and staff management at PT. Cakra Agro.",
+    "img": "./img/ui-cakra.png"
+  },
+  {
+    "title": "Waste Bank.",
+    "date": "2023",
+    "description": "As a Mobile Project, to locate the nearest waste bank and sell household waste.",
+    "img": "./img/ui-sampah.png"
+  },
+  {
+    "title": "E-Skrips.",
+    "date": "2023",
+    "description": "As Thesis Research, with features for submission and monitoring of UAD students' theses.",
+    "img": "./img/ui-eskrips.png"
+  }
+]

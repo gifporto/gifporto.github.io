@@ -1,0 +1,40 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+  }
+}
+
+/* hanya untuk preview theme color */
+:root {
+  --color-primary: #9929EA;
+  --color-bg: #ebebeb;
+  --color-bg-secondary: #ffffff;
+  --color-text: #0f172a;
+  --color-text-secondary: #676767;
+}
+
+/* Variabel default */
+@theme {
+  --color-primary: #9929EA;
+  --color-bg: #ebebeb;
+  --color-bg-secondary: #ffffff;
+  --color-text: #0f172a;
+  --color-text-secondary: #676767;
+}
+
+/* Variabel untuk dark mode */
+.dark {
+  --color-primary: #B4E50D;
+  --color-bg: #0f172a;
+  --color-bg-secondary: #1d293d;
+  --color-text: #f8fafc;
+  --color-text-secondary: #c3c3c3
+}
+
+.btn-primary{
+  @apply bg-primary text-bg font-semibold hover:opacity-70 cursor-pointer px-4 py-2 rounded-lg w-fit h-fit;
+}
+
+

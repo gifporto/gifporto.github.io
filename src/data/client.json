@@ -1,0 +1,53 @@
+[
+  {
+    "title": "Front-End Developer",
+    "client": "Biro Sistem Informasi UAD (DevLab)",
+    "description": "As a freelance developer, I worked on the Super Sapen project integrated platform for Sapen School to manage student admissions (SPMB/indent) and payments. I was responsible for building key features and ensuring smooth integration and collaboration within the team.",
+    "date": "02/2025 – Present",
+    "region": "Yogyakarta"
+  },
+  {
+    "title": "UI/UX & Front-End Developer",
+    "client": "Biro Sistem Informasi UAD",
+    "description": "As a student employee, I collaborated with a team on one of the Sapto projects, a website used by BAN-PT to manage university accreditation. In this project, I was responsible for ensuring smooth integration and functionality while effectively collaborating with team members.",
+    "date": "01/2024 – 09/2024",
+    "region": "Yogyakarta",
+    "link": "https://bsi.uad.ac.id",
+    "img": "./img/client-bsilogo.png"
+  },
+  {
+    "title": "UI/UX Designer",
+    "client": "TRIES Digital Indonesia",
+    "description": "I completed an internship as a UI/UX Designer, working on the SHIFT mobile attendance project in one week. In addition to designing for this project, I also created vector assets for other projects, demonstrating my ability to manage time and tasks efficiently.",
+    "date": "06/2023 – 09/2023",
+    "region": "Yogyakarta",
+    "link": "https://tries.co.id/",
+    "img": "./img/client-trieslogo.png"
+  },
+  {
+    "title": "Creative Desainer",
+    "client": "MSV Studio AMIKOM",
+    "description": "I completed an internship as part of the Creative Design team, working on designs for products, events, marketing, and advertising. I completed each design project within 2-3 hours with high quality, showcasing my efficiency and skills in meeting design needs quickly and professionally.",
+    "date": "02/2023 – 05/2023",
+    "region": "Yogyakarta",
+     "link": "https://msvstudio.co.id/",
+    "img": "./img/client-msvlogo.png"
+  },
+  {
+    "title": "Graphic Designer",
+    "client": "Dykyka Sticker & Thuluse Pondok Hati",
+    "description": "I have created numerous sticker and flyer designs in my freelance and part-time work. This experience involved collaborating with clients to meet their specific needs while ensuring timely delivery. It has enhanced my graphic design skills and allowed me to adapt to various design styles and preferences.",
+    "date": "04/2021 – 11/2022",
+    "region": "Yogyakarta",
+    "link": "https://www.instagram.com/cutting_sticker_yogyakarta/",
+    "img": "./img/client-dyktalogo.png"
+  },
+  {
+    "link": "https://cakraagroin.com/",
+    "img": "./img/client-cakralogo.png"
+  },
+  {
+    "link": "https://www.pondokhatithuluse.com",
+    "img": "./img/client-thuluselogo.png"
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "id": "frontend",
+    "title": "FrontEnd Developer",
+    "description": "Developing a responsive website that is easy to interact with features.",
+    "icon": "IconFrontEnd"
+  },
+  {
+    "id": "uiux",
+    "title": "UI/UX Design",
+    "description": "Creating an intuitive interface and an optimal user experience.",
+    "icon": "IconUIUX"
+  },
+  {
+    "id": "graphic",
+    "title": "Graphic Design",
+    "description": "Aesthetic and communicative design to strengthen the message and brand identity",
+    "icon": "IconGraphicDesign"
+  },
+  {
+    "id": "sosmed",
+    "title": "Social Media Specialist",
+    "description": "Optimizing media to enhance reach and engagement.",
+    "icon": "IconSosmedSpecialist"
+  }
+]
