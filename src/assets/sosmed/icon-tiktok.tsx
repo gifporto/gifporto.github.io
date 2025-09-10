@@ -1,6 +1,6 @@
 import React from "react";
 
-const IconTiktok: React.FC<React.SVGProps<SVGSVGElement>> = (props) => {
+const IconTiktok: React.FC<React.SVGProps<SVGSVGElement>> = () => {
   return (
     <svg role="img" width="20" className="fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
       <title>TikTok</title>

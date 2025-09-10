@@ -12,7 +12,7 @@ import dataTech from "@/data/tech.json"
 import services from "@/data/services.json"
 import BlurText from "./BlurText";
 
-const iconMap: Record<string, JSX.Element> = {
+const iconMap: Record<string, React.ReactNode> = {
   IconWhatsapp: <IconWhatsapp />,
   IconInstagram: <IconInstagram />,
   IconTiktok: <IconTiktok />,
@@ -20,10 +20,6 @@ const iconMap: Record<string, JSX.Element> = {
   IconLinkedin: <IconLinkedin />,
   IconGmail: <IconGmail />,
   IconGithub: <IconGithub />
-};
-
-const handleAnimationComplete = () => {
-  console.log('Animation completed!');
 };
 
 const TypingServices: React.FC = () => {

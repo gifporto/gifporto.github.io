@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 import IconFrontEnd from "@/assets/service/icon-fe";
 import IconGraphicDesign from "@/assets/service/icon-graph";
@@ -18,9 +18,8 @@ import dataClient from "@/data/client.json";
 import services from "@/data/services.json";
 import dataFrontend from "@/data/frontend.json";
 import dataCertif from "@/data/certificate.json";
-import Portfolio from "./Portfolio";
 
-const iconMap: Record<string, JSX.Element> = {
+const iconMap: Record<string, React.ReactNode> = {
     IconFrontEnd: <IconFrontEnd />,
     IconUIUX: <IconUIUX />,
     IconGraphicDesign: <IconGraphicDesign />,

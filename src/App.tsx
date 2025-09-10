@@ -8,7 +8,6 @@ import Topbar from "@/components/Topbar";
 import Sidebar from "@/components/Sidebar";
 import Bottombar from "@/components/Bottombar";
 import SplashCursor from "./components/SplashCursor";
-import HellBackground from "./components/HellBackground";
 
 // Komponen ScrollToTop
 const ScrollToTop: React.FC = () => {

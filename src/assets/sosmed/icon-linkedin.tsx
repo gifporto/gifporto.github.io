@@ -1,6 +1,6 @@
 import React from "react";
 
-const IconLinkedin: React.FC<React.SVGProps<SVGSVGElement>> = (props) => {
+const IconLinkedin: React.FC<React.SVGProps<SVGSVGElement>> = () => {
   return (
     <svg role="img" className="fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
       <title>LinkedIn</title>

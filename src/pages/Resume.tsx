@@ -11,7 +11,7 @@ import IconLinkedin from "@/assets/sosmed/icon-linkedin";
 import IconGmail from "@/assets/sosmed/icon-gmail";
 import IconGithub from "@/assets/sosmed/icon-github";
 
-const iconMap: Record<string, JSX.Element> = {
+const iconMap: Record<string, React.ReactNode> = {
     IconWhatsapp: <IconWhatsapp />,
     IconLinkedin: <IconLinkedin />,
     IconGmail: <IconGmail />,

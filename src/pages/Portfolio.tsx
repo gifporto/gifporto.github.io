@@ -12,7 +12,10 @@ import IconBotstrap from "@/assets/tech/icon-botstrap";
 import IconJava from "@/assets/tech/icon-java";
 import IconVue from "@/assets/tech/icon-vue";
 
-const iconMap: Record<string, JSX.Element> = {
+type TabKey = "frontend" | "uiux" | "design";
+
+
+const iconMap: Record<string, React.ReactNode> = {
   IconLaravel: <IconLaravel />,
   IconReact: <IconReact />,
   IconTailwind: <IconTailwind />,
@@ -22,35 +25,36 @@ const iconMap: Record<string, JSX.Element> = {
   IconVue: <IconVue />,
 };
 
-const tabs = [
+const tabs: { key: TabKey; label: string }[] = [
   { key: "frontend", label: "Frontend" },
   { key: "uiux", label: "UI/UX" },
   { key: "design", label: "Design" },
 ];
 
 const Portfolio = () => {
-  const [activeTab, setActiveTab] = useState("frontend");
-  const [prevTab, setPrevTab] = useState("frontend");
+  const [activeTab, setActiveTab] = useState<TabKey>("frontend");
+  const [prevTab, setPrevTab] = useState<TabKey>("frontend");
 
-  const handleTabChange = (tab) => {
+  const handleTabChange = (tab: TabKey) => {
     setPrevTab(activeTab);
     setActiveTab(tab);
   };
 
-  const getDirection = (current, previous) => {
+  const getDirection = (current: TabKey, previous: TabKey) => {
     const currentIndex = tabs.findIndex((t) => t.key === current);
     const prevIndex = tabs.findIndex((t) => t.key === previous);
     return currentIndex > prevIndex ? "right" : "left";
   };
 
   // Variants animasi slide horizontal
+  type Direction = "left" | "right";
   const variants = {
-    enter: (direction) => ({
+    enter: (direction: Direction) => ({
       opacity: 0,
       x: direction === "right" ? 50 : -50,
     }),
     center: { opacity: 1, x: 0 },
-    exit: (direction) => ({
+    exit: (direction: Direction) => ({
       opacity: 0,
       x: direction === "right" ? -50 : 50,
     }),

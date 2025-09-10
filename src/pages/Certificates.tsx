@@ -1,5 +1,4 @@
 import dataCertif from "@/data/certificate.json";
-import dataUiux from "@/data/uiux.json";
 
 const Certificates = () => {
   return (
