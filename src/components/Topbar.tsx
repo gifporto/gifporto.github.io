@@ -7,12 +7,21 @@ import IconLinkedin from "@/assets/sosmed/icon-linkedin";
 import IconGmail from "@/assets/sosmed/icon-gmail";
 import IconGithub from "@/assets/sosmed/icon-github";
 
+import IconFrontEnd from "@/assets/service/icon-fe";
+import IconGraphicDesign from "@/assets/service/icon-graph";
+import IconSosmedSpecialist from "@/assets/service/icon-sosmed";
+import IconUIUX from "@/assets/service/icon-ui";
+
 import sosmed from "@/data/sosmed.json"
-import dataTech from "@/data/tech.json"
 import services from "@/data/services.json"
 import BlurText from "./BlurText";
 
 const iconMap: Record<string, React.ReactNode> = {
+  IconFrontEnd: <IconFrontEnd />,
+  IconUIUX: <IconUIUX />,
+  IconGraphicDesign: <IconGraphicDesign />,
+  IconSosmedSpecialist: <IconSosmedSpecialist />,
+
   IconWhatsapp: <IconWhatsapp />,
   IconInstagram: <IconInstagram />,
   IconTiktok: <IconTiktok />,
@@ -47,7 +56,7 @@ const TypingServices: React.FC = () => {
   }, [subIndex, forward, currentService]);
 
   return (
-    <h3 className="text-sm text-text-secondary h-6">
+    <h3 className="text-sm text-text h-6">
       {currentService.substring(0, subIndex)}
       <span className="border-r-2 border-primary animate-pulse ml-1"></span>
     </h3>
@@ -55,59 +64,160 @@ const TypingServices: React.FC = () => {
 };
 
 const Topbar: React.FC = () => {
+  const [index, setIndex] = useState(0);
+  const [startY, setStartY] = useState<number | null>(null);
+
+  // Auto slide
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIndex((prev) => (prev + 1) % services.length);
+    }, 3000);
+    return () => clearInterval(interval);
+  }, []);
+
+  // Handle drag/swipe
+  const handleTouchStart = (e: React.TouchEvent) => {
+    setStartY(e.touches[0].clientY);
+  };
+
+  const handleTouchEnd = (e: React.TouchEvent) => {
+    if (startY === null) return;
+    const endY = e.changedTouches[0].clientY;
+    const diffY = startY - endY;
+
+    if (Math.abs(diffY) > 50) {
+      if (diffY > 0) {
+        // swipe up
+        setIndex((prev) => (prev + 1) % services.length);
+      } else {
+        // swipe down
+        setIndex((prev) => (prev - 1 + services.length) % services.length);
+      }
+    }
+    setStartY(null);
+  };
+
   return (
     <>
       <div className="w-full flex md:flex-row flex-col items-end gap-4 md:px-0 px-2">
-        <div className="w-full md:w-3/4 md:pr-28">
+        <div className="w-full md:w-3/4 md:pr-20 relative">
           <div className="my-2 text-text-secondary text-sm md:text-base">
             Selamat Datang di Portfolio saya
           </div>
-          <div className='w-full h-fit relative px-6 py-6 bg-bg-secondary bg-gradient-to-r from-primary/40 via-bg-secondary to-bg-secondary shadow-lg rounded-xl'>
-            <div className='flex justify-between'>
-              <div className="">
-                <BlurText className="font-bold text-dark lg:text-4xl mt-1 text-text" text="Taufiq Aditya Putra" easing="easeInOut" />
-                {/* Ganti list services dengan animasi typing */}
+
+          {/* Foto */}
+          <img
+            src="./img/myfoto1.png"
+            alt="Taufiq Aditya"
+            className="absolute z-20 max-w-full w-40 bottom-0 right-0 md:-translate-x-2"
+          />
+
+          {/* Card dengan background SVG */}
+          <div className="w-full h-fit relative px-6 py-6 md:py-4 shadow-lg rounded-xl overflow-hidden">
+            {/* SVG Background */}
+            <div className="absolute inset-0 pointer-events-none bg-bg-secondary">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 1200 360"
+                preserveAspectRatio="none"
+                className="w-full h-full"
+              >
+                <defs>
+                  <linearGradient id="g3" x1="0" x2="1" className=" text-primary">
+                    <stop offset="0" stopColor="currentColor" stopOpacity="0.1" />
+                    <stop offset="1" stopColor="currentColor" stopOpacity="1" />
+                  </linearGradient>
+                  <filter id="soft" x="-20%" y="-20%" width="140%" height="140%">
+                    <feGaussianBlur stdDeviation="18" result="b" />
+                    <feBlend in="SourceGraphic" in2="b" />
+                  </filter>
+                </defs>
+                <g filter="url(#soft)" opacity="0.9">
+                  <path
+                    d="M0,220 L150,180 C300,140 450,260 600,220 C750,180 900,260 1050,220 L1200,180 L1200,360 L0,360 Z"
+                    fill="url(#g3)"
+                  />
+                </g>
+                <path
+                  d="M0,210 C200,150 400,300 600,240 C800,180 1000,260 1200,200"
+                  fill="none"
+                  stroke="rgba(255,255,255,0.12)"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+            </div>
+
+            {/* Konten Card */}
+            <div className="relative z-10 flex justify-between">
+              <div>
+                <BlurText
+                  className="font-bold lg:text-4xl mt-1 text-text"
+                  text="Taufiq Aditya Putra"
+                  easing="easeInOut"
+                />
                 <TypingServices />
-                <div className='mt-2 flex gap-2'>
+                <div className="mt-2 flex gap-2">
                   {sosmed.map((item) => (
                     <a
                       key={item.id}
                       href={item.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="w-8 h-8 rounded-full flex justify-center items-center border-2 border-primary text-primary dark:border-primary dark:text-primary hover:text-white dark:hover:text-bg-secondary shadow-lg hover:shadow-primary/50 dark:hover:shadow-primary/50 hover:border-hidden hover:bg-primary dark:hover:bg-primary transition ease-in-out"
+                      className="w-8 h-8 rounded-full flex justify-center items-center border-2 border-primary text-primary hover:text-white shadow-lg hover:shadow-primary/50 transition ease-in-out"
                     >
-                      <div className="size-4">
-                        {iconMap[item.icon]}
-                      </div>
+                      <div className="size-4">{iconMap[item.icon]}</div>
                     </a>
                   ))}
-                </div>
-              </div>
-              <div className="w-full md:w-fit">
-                <img src="./img/myfoto1.png" alt="Taufiq Aditya" className="absolute z-10 max-w-full mx-auto w-40 bottom-0 md:-translate-x-16" />
-              </div>
-              <div className="absolute overflow-hidden w-36 h-36 right-0 bottom-0 rounded-r-xl">
-                <div className="rounded-full w-96 h-96 lg:w-80 lg:h-80 bg-primary">
                 </div>
               </div>
             </div>
           </div>
         </div>
 
-        <div className="w-full md:w-1/4">
-          <div className="relative overflow-hidden px-4 py-6 bg-bg-secondary shadow-lg rounded-xl">
-            <h3 className="text-text tech-lg font-semibold mb-2">Technology</h3>
-            <div className="flex flex-wrap gap-2 relative">
-              {dataTech.map((item, i) => (
-                <div key={i}>
-                  <img className="h-8" src={item.img} alt="" />
+        {/* card y */}
+        <div
+          className="w-full md:w-1/4 relative overflow-hidden md:h-36 h-48"
+          onTouchStart={handleTouchStart}
+          onTouchEnd={handleTouchEnd}
+        >
+          <div className="absolute bottom-0 w-full h-8 bg-gradient-to-t from-bg to-transparent z-10 pointer-events-none"></div>
+          <div
+            className="flex flex-col gap-6 transition-transform duration-700 ease-in-out"
+            style={{ transform: `translateY(-${index * 26}%)` }}
+          >
+            {services.map((service) => (
+              <div
+                key={service.id}
+                className="flex flex-col justify-center py-5 px-2 bg-bg-secondary shadow-lg rounded-xl"
+              >
+                <div className="container mx-auto flex p-2">
+                  <div className="flex justify-center w-1/5 mr-2 text-primary dark:text-primary2 fill-current">
+                    {iconMap[service.icon]}
+                  </div>
+                  <div className="px-0 flex-1">
+                    <h3 className="font-semibold text-text">{service.title}</h3>
+                    <p className="text-xs mt-1 text-text-secondary">
+                      {service.description}
+                    </p>
+                  </div>
                 </div>
-              ))}
-            </div>
-            <div className="h-32 absolute -right-10 -bottom-8 fill-primary/30 dark:fill-primary2/30">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" id="browser"><path d="M16 1a15 15 0 1 0 15 15A15 15 0 0 0 16 1Zm13 15a12.94 12.94 0 0 1-.64 4h-6.57a38 38 0 0 0 .21-4 38 38 0 0 0-.21-4H25a1 1 0 0 0 0-2h-3.49a19.39 19.39 0 0 0-2.12-6.54A13 13 0 0 1 29 16ZM16 29c-1.17 0-2.71-2.61-3.49-7h7c-.8 4.39-2.34 7-3.51 7Zm-3.78-9a37.24 37.24 0 0 1 0-8h7.57a36.45 36.45 0 0 1 .21 4 36.45 36.45 0 0 1-.22 4ZM16 3c1.17 0 2.71 2.61 3.49 7h-7c.8-4.39 2.34-7 3.51-7Zm-3.39.46A19.39 19.39 0 0 0 10.49 10h-6a13 13 0 0 1 8.12-6.54ZM3 16a12.94 12.94 0 0 1 .64-4h6.58a37.82 37.82 0 0 0 0 8H7a1 1 0 0 0 0 2h3.49a19.39 19.39 0 0 0 2.12 6.54A13 13 0 0 1 3 16Zm16.39 12.54A19.39 19.39 0 0 0 21.51 22h6a13 13 0 0 1-8.12 6.54Z" data-name="Layer 6"></path></svg>
-            </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Indicator */}
+          <div className="absolute top-1/2 right-2 -translate-y-1/2 flex flex-col gap-2">
+            {services.map((_, i) => (
+              <button
+                key={i}
+                onClick={() => setIndex(i)}
+                className={`w-3 h-3 rounded-full transition-colors ${
+                  i === index ? "bg-primary" : "bg-gray-400"
+                }`}
+              />
+            ))}
           </div>
         </div>
       </div>

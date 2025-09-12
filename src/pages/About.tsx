@@ -15,7 +15,7 @@ import IconJava from "@/assets/tech/icon-java";
 import IconVue from "@/assets/tech/icon-vue";
 
 import dataClient from "@/data/client.json";
-import services from "@/data/services.json";
+import dataTech from "@/data/tech.json"
 import dataFrontend from "@/data/frontend.json";
 import dataCertif from "@/data/certificate.json";
 
@@ -228,28 +228,18 @@ const About = () => {
 
                 {/* Services */}
                 <div className="w-full md:w-2/5 md:px-0 px-2">
-                    <h4 className="text-text text-xl font-semibold mb-2">Services</h4>
-                    <div className="grid gap-4 lg:grid-cols-1">
-                        {services.map((service) => (
-                            <div
-                                key={service.id}
-                                className="py-5 px-2 bg-bg-secondary shadow-lg rounded-xl"
-                            >
-                                <div className="container mx-auto flex p-2">
-                                    <div className="flex justify-center w-1/5 mr-2 text-primary dark:text-primary2 fill-current">
-                                        {iconMap[service.icon]}
-                                    </div>
-                                    <div className="px-0 flex-1">
-                                        <h3 className="font-semibold text-text">
-                                            {service.title}
-                                        </h3>
-                                        <p className="text-xs mt-1 text-text-secondary">
-                                            {service.description}
-                                        </p>
-                                    </div>
+                    <h4 className="text-text text-xl font-semibold mb-2">Technology</h4>
+                    <div className="relative overflow-hidden px-4 py-6 bg-bg-secondary shadow-lg rounded-xl">
+                        <div className="flex flex-wrap gap-2 relative">
+                            {dataTech.map((item, i) => (
+                                <div key={i}>
+                                    <img className="h-8" src={item.img} alt="" />
                                 </div>
-                            </div>
-                        ))}
+                            ))}
+                        </div>
+                        <div className="h-32 absolute -right-10 -bottom-8 fill-primary/30 dark:fill-primary2/30">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" id="browser"><path d="M16 1a15 15 0 1 0 15 15A15 15 0 0 0 16 1Zm13 15a12.94 12.94 0 0 1-.64 4h-6.57a38 38 0 0 0 .21-4 38 38 0 0 0-.21-4H25a1 1 0 0 0 0-2h-3.49a19.39 19.39 0 0 0-2.12-6.54A13 13 0 0 1 29 16ZM16 29c-1.17 0-2.71-2.61-3.49-7h7c-.8 4.39-2.34 7-3.51 7Zm-3.78-9a37.24 37.24 0 0 1 0-8h7.57a36.45 36.45 0 0 1 .21 4 36.45 36.45 0 0 1-.22 4ZM16 3c1.17 0 2.71 2.61 3.49 7h-7c.8-4.39 2.34-7 3.51-7Zm-3.39.46A19.39 19.39 0 0 0 10.49 10h-6a13 13 0 0 1 8.12-6.54ZM3 16a12.94 12.94 0 0 1 .64-4h6.58a37.82 37.82 0 0 0 0 8H7a1 1 0 0 0 0 2h3.49a19.39 19.39 0 0 0 2.12 6.54A13 13 0 0 1 3 16Zm16.39 12.54A19.39 19.39 0 0 0 21.51 22h6a13 13 0 0 1-8.12 6.54Z" data-name="Layer 6"></path></svg>
+                        </div>
                     </div>
                 </div>
             </div>

@@ -8,7 +8,7 @@
 
 /* hanya untuk preview theme color */
 :root {
-  --color-primary: #9929EA;
+  --color-primary: #3D74B6;
   --color-bg: #ebebeb;
   --color-bg-secondary: #ffffff;
   --color-text: #0f172a;
@@ -17,7 +17,7 @@
 
 /* Variabel default */
 @theme {
-  --color-primary: #9929EA;
+  --color-primary: #3D74B6;
   --color-bg: #ebebeb;
   --color-bg-secondary: #ffffff;
   --color-text: #0f172a;

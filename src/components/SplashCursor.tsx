@@ -887,10 +887,22 @@ export default function SplashCursor({
             if (colorUpdateTimer >= 1) {
                 colorUpdateTimer = wrap(colorUpdateTimer, 0, 1);
                 pointers.forEach(p => {
-                    p.color = generateColor();
+                    p.color = getPrimaryColor();
                 });
             }
         }
+
+        function getPrimaryColor(): ColorRGB {
+            const cssVar = getComputedStyle(document.documentElement).getPropertyValue('--color-primary').trim();
+            const hex = cssVar.replace('#', '');
+            const bigint = parseInt(hex, 16);
+            return {
+                r: ((bigint >> 16) & 255) / 255,
+                g: ((bigint >> 8) & 255) / 255,
+                b: (bigint & 255) / 255
+            };
+        }
+
 
         function applyInputs() {
             for (const p of pointers) {
@@ -1044,7 +1056,7 @@ export default function SplashCursor({
         }
 
         function clickSplat(pointer: Pointer) {
-            const color = generateColor();
+            const color = false;
             color.r *= 10;
             color.g *= 10;
             color.b *= 10;
@@ -1099,7 +1111,7 @@ export default function SplashCursor({
             pointer.prevTexcoordY = pointer.texcoordY;
             pointer.deltaX = 0;
             pointer.deltaY = 0;
-            pointer.color = generateColor();
+            pointer.color = getPrimaryColor();
         }
 
         function updatePointerMoveData(pointer: Pointer, posX: number, posY: number, color: ColorRGB) {
@@ -1200,7 +1212,7 @@ export default function SplashCursor({
             const pointer = pointers[0];
             const posX = scaleByPixelRatio(e.clientX);
             const posY = scaleByPixelRatio(e.clientY);
-            const color = generateColor();
+            const color = getPrimaryColor();
             updateFrame();
             updatePointerMoveData(pointer, posX, posY, color);
             document.body.removeEventListener('mousemove', handleFirstMouseMove);
