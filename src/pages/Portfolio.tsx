@@ -152,10 +152,12 @@ const Portfolio = () => {
                     src={item.img}
                     alt={item.title}
                   />
-                  <h5 className="text-text mt-3 font-semibold">{item.title}</h5>
-                  <p className="text-text-seconday text-sm mt-1">
-                    {item.description}
-                  </p>
+                  <div className="bg-bg-secondary rounded-xl p-4 mt-2">
+                    <h5 className="text-text font-semibold">{item.title}</h5>
+                    <p className="text-text-seconday text-sm mt-1">
+                      {item.description}
+                    </p>
+                  </div>
                 </div>
               ))}
             </div>

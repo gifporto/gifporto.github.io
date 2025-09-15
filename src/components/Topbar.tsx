@@ -99,21 +99,23 @@ const Topbar: React.FC = () => {
 
   return (
     <>
-      <div className="w-full flex md:flex-row flex-col items-end gap-4 md:px-0 px-2">
-        <div className="w-full md:w-3/4 md:pr-20 relative">
-          <div className="my-2 text-text-secondary text-sm md:text-base">
+      <div className="w-full flex lg:flex-row flex-col items-end gap-4 lg:px-0 px-2">
+        <div className="w-full lg:w-3/4 lg:pr-20 relative">
+          <div className="my-2 text-text-secondary text-sm lg:text-base">
             Selamat Datang di Portfolio saya
           </div>
 
           {/* Foto */}
-          <img
-            src="./img/myfoto1.png"
-            alt="Taufiq Aditya"
-            className="absolute z-20 max-w-full w-40 bottom-0 right-0 md:-translate-x-2"
-          />
+          <div className="absolute z-20 bottom-0 right-0 lg:-translate-x-2 w-48 overflow-hidden">
+            <img
+              src="./img/myfoto3.png"
+              alt="Taufiq Aditya"
+              className="max-w-full drop-shadow-xl drop-shadow-primary/70"
+            />
+          </div>
 
           {/* Card dengan background SVG */}
-          <div className="w-full h-fit relative px-6 py-6 md:py-4 shadow-lg rounded-xl overflow-hidden">
+          <div className="w-full h-fit relative px-6 py-6 lg:py-4 shadow-lg rounded-xl overflow-hidden">
             {/* SVG Background */}
             <div className="absolute inset-0 pointer-events-none bg-bg-secondary">
               <svg
@@ -178,7 +180,7 @@ const Topbar: React.FC = () => {
 
         {/* card y */}
         <div
-          className="w-full md:w-1/4 relative overflow-hidden md:h-36 h-48"
+          className="w-full lg:w-1/4 relative overflow-hidden lg:h-36 h-36"
           onTouchStart={handleTouchStart}
           onTouchEnd={handleTouchEnd}
         >
@@ -213,9 +215,8 @@ const Topbar: React.FC = () => {
               <button
                 key={i}
                 onClick={() => setIndex(i)}
-                className={`w-3 h-3 rounded-full transition-colors ${
-                  i === index ? "bg-primary" : "bg-gray-400"
-                }`}
+                className={`w-3 h-3 rounded-full transition-colors ${i === index ? "bg-primary" : "bg-gray-400"
+                  }`}
               />
             ))}
           </div>

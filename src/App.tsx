@@ -21,36 +21,56 @@ const ScrollToTop: React.FC = () => {
 };
 
 const App: React.FC = () => {
-  const [dark, setDark] = useState(false);
+  const [dark, setDark] = useState<boolean>(false);
 
+  // Cek theme dari browser/OS saat pertama kali load
+  useEffect(() => {
+    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)");
+
+    // Set sesuai system preference
+    setDark(prefersDark.matches);
+
+    // Listener kalau user ubah theme OS/browser
+    const listener = (e: MediaQueryListEvent) => setDark(e.matches);
+    prefersDark.addEventListener("change", listener);
+
+    return () => prefersDark.removeEventListener("change", listener);
+  }, []);
+
+  // Update class HTML
   useEffect(() => {
     document.documentElement.classList.toggle("dark", dark);
   }, [dark]);
 
   return (
     <body className="relative min-h-screen flex w-full justify-center text-text bg-bg">
-      <SplashCursor 
-        SHADING={true} 
-        BACK_COLOR={{ r: 0, g: 0, b: 0.1 }} 
-        COLOR_UPDATE_SPEED={5} 
-      />
+      <SplashCursor/>
 
       {/* Card Background Layer */}
       <div className="absolute overflow-hidden -z-10 inset-0 flex items-center justify-center h-full">
-        <div className="absolute w-full h-full bg-[#0f172a] transition-all duration-700" >
-          
-        </div>
+        <div className="absolute w-full h-full bg-[#0f172a] transition-all duration-700"></div>
         <div
           className={`absolute w-full h-full bg-[#ebebeb] transition-transform duration-700 ${dark ? "translate-x-full" : "translate-x-0"
             }`}
         />
       </div>
 
-      <div className="flex w-full md:w-7xl">
-        <div className="w-fit hidden md:block md:w-1/12 md:sticky md:top-0 h-screen py-8 z-10">
+      {/* <div>
+        <div
+          className="fixed -z-10 -left-40 -top-20 w-[520px] h-[520px] rounded-full bg-primary opacity-70 blur-3xl transform-gpu"
+          aria-hidden="true"></div>
+
+        <div
+          className="fixed -z-10 --20 -bottom-20 w-[520px] h-[420px] rounded-full bg-primary opacity-60 blur-2xl transform-gpu"
+          aria-hidden="true"></div>
+      </div> */}
+
+      <div className="flex w-full lg:w-7xl">
+        <div className="w-fit hidden lg:block lg:w-1/12 lg:sticky lg:top-0 h-screen py-8 z-10">
+          {/* Sidebar dengan switch geser */}
           <Sidebar dark={dark} toggleDark={() => setDark((prev) => !prev)} />
         </div>
-        <div className="w-full md:w-11/12 flex flex-col py-8">
+        <div className="w-full lg:w-11/12 flex flex-col py-8">
           <Topbar />
           <main className="mt-4">
             <ScrollToTop />
@@ -63,7 +83,8 @@ const App: React.FC = () => {
           </main>
         </div>
       </div>
-      <div className="sticky z-10 bottom-0 p-2 md:hidden w-full">
+      <div className="sticky z-10 bottom-0 p-2 lg:hidden w-full">
+        {/* Bottombar juga ada switch geser */}
         <Bottombar dark={dark} toggleDark={() => setDark((prev) => !prev)} />
       </div>
     </body>

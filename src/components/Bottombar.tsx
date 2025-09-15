@@ -64,7 +64,7 @@ const Bottombar: React.FC<SidebarProps> = ({ dark, toggleDark }) => {
 
   return (
     <>
-      <nav className="bg-bg-secondary rounded-xl p-4 w-full">
+      <nav className="bg-bg-secondary shadow-lg shadow-primary/30 rounded-xl p-4 w-full">
         <div className="flex justify-between">
           <button
             onClick={toggleDark}
@@ -75,7 +75,7 @@ const Bottombar: React.FC<SidebarProps> = ({ dark, toggleDark }) => {
                 }`}
             />
           </button>
-          <div className="flex gap-2">
+          <div className="flex gap-4">
             {links.map((link) => (
               <Link
                 key={link.to}
@@ -85,7 +85,7 @@ const Bottombar: React.FC<SidebarProps> = ({ dark, toggleDark }) => {
                   : "text-gray-500 hover:text-primary"
                   }`}
               >
-                {link.label}
+                {link.icon}
               </Link>
             ))}
           </div>

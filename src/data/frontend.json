@@ -4,7 +4,7 @@
     "date": "2025",
     "description": "Software agent for developing and delivering custom systems and applications",
     "img": "./img/devlab.png",
-    "link": "",
+    "link": "https://gifporto.github.io/devlab/",
     "tech1": "IconVue",
     "tech2": "IconTailwind"
   },
@@ -13,7 +13,7 @@
     "date": "2025",
     "description": "Registration, new student enrollment, and payment at SD Muhammadiyah Sapen.",
     "img": "./img/web17.png",
-    "link": "",
+    "link": "https://supersapen.com/landingPage",
     "tech1": "IconReact",
     "tech2": "IconTailwind"
   },
@@ -49,7 +49,7 @@
     "date": "2024",
     "description": "Website for requesting a doctor’s appointment on the UAD campus.",
     "img": "./img/web11.png",
-    "link": "",
+    "link": "https://klinik.uad.ac.id/login",
     "tech1": "IconLaravel",
     "tech2": "IconBotstrap"
   },
@@ -67,7 +67,7 @@
     "date": "2024",
     "description": "Website for Program and University Accreditation.",
     "img": "./img/web9.png",
-    "link": "",
+    "link": "https://sapto2.banpt.or.id/",
     "tech1": "IconCodeIgniter",
     "tech2": "IconBotstrap"
   },
@@ -94,7 +94,7 @@
     "date": "2024",
     "description": "Website that records the activities of students from the Faculty of Medicine at UAD",
     "img": "./img/web7.png",
-    "link": "",
+    "link": "https://dokma.uad.ac.id/",
     "tech1": "IconCodeIgniter",
     "tech2": "IconBotstrap"
   },
@@ -112,7 +112,7 @@
     "date": "2023",
     "description": "Website portofolio",
     "img": "./img/web2.png",
-    "link": "https://gifporto.github.io",
+    "link": "https://gifporto.github.io/porto/",
     "tech1": "IconReact",
     "tech2": "IconTailwind"
   },
