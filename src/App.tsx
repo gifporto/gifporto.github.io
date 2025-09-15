@@ -65,12 +65,12 @@ const App: React.FC = () => {
           aria-hidden="true"></div>
       </div> */}
 
-      <div className="flex w-full lg:w-7xl">
-        <div className="w-fit hidden lg:block lg:w-1/12 lg:sticky lg:top-0 h-screen py-8 z-10">
+      <div className="flex w-full xl:w-7xl">
+        <div className="w-full hidden xl:flex lg:w-1/12 bg-red-300 xl:sticky xl:top-0 h-screen py-8 z-10">
           {/* Sidebar dengan switch geser */}
           <Sidebar dark={dark} toggleDark={() => setDark((prev) => !prev)} />
         </div>
-        <div className="w-full lg:w-11/12 flex flex-col py-8">
+        <div className="w-full xl:w-11/12 flex flex-col py-8 bg-blue-300">
           <Topbar />
           <main className="mt-4">
             <ScrollToTop />
@@ -83,7 +83,7 @@ const App: React.FC = () => {
           </main>
         </div>
       </div>
-      <div className="sticky z-10 bottom-0 p-2 lg:hidden w-full">
+      <div className="sticky z-10 bottom-0 p-2 xl:hidden w-full">
         {/* Bottombar juga ada switch geser */}
         <Bottombar dark={dark} toggleDark={() => setDark((prev) => !prev)} />
       </div>

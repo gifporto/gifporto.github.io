@@ -99,14 +99,14 @@ const Topbar: React.FC = () => {
 
   return (
     <>
-      <div className="w-full flex lg:flex-row flex-col items-end gap-4 lg:px-0 px-2">
-        <div className="w-full lg:w-3/4 lg:pr-20 relative">
-          <div className="my-2 text-text-secondary text-sm lg:text-base">
+      <div className="w-full flex lg:flex-row flex-col items-end gap-4 xl:px-0 px-2">
+        <div className="w-full lg:w-2/3 xl:w-3/4 xl:pr-20 relative">
+          <div className="my-2 text-text-secondary text-sm xl:text-base">
             Selamat Datang di Portfolio saya
           </div>
 
           {/* Foto */}
-          <div className="absolute z-20 bottom-0 right-0 lg:-translate-x-2 w-48 overflow-hidden">
+          <div className="absolute z-20 bottom-0 right-0 xl:-translate-x-2 w-48 overflow-hidden">
             <img
               src="./img/myfoto3.png"
               alt="Taufiq Aditya"
@@ -115,7 +115,7 @@ const Topbar: React.FC = () => {
           </div>
 
           {/* Card dengan background SVG */}
-          <div className="w-full h-fit relative px-6 py-6 lg:py-4 shadow-lg rounded-xl overflow-hidden">
+          <div className="w-full h-fit relative px-6 py-6 xl:py-4 shadow-xl rounded-xl overflow-hidden">
             {/* SVG Background */}
             <div className="absolute inset-0 pointer-events-none bg-bg-secondary">
               <svg
@@ -155,7 +155,7 @@ const Topbar: React.FC = () => {
             <div className="relative z-10 flex justify-between">
               <div>
                 <BlurText
-                  className="font-bold lg:text-4xl mt-1 text-text"
+                  className="font-bold text-xl xl:text-4xl mt-1 text-text"
                   text="Taufiq Aditya Putra"
                   easing="easeInOut"
                 />
@@ -167,7 +167,7 @@ const Topbar: React.FC = () => {
                       href={item.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="w-8 h-8 rounded-full flex justify-center items-center border-2 border-primary text-primary hover:text-white shadow-lg hover:shadow-primary/50 transition ease-in-out"
+                      className="w-8 h-8 rounded-full flex justify-center items-center border-2 border-primary text-primary hover:text-white shadow-xl hover:shadow-primary/50 transition ease-in-out"
                     >
                       <div className="size-4">{iconMap[item.icon]}</div>
                     </a>
@@ -180,7 +180,7 @@ const Topbar: React.FC = () => {
 
         {/* card y */}
         <div
-          className="w-full lg:w-1/4 relative overflow-hidden lg:h-36 h-36"
+          className="w-full lg:w-1/3 xl:w-1/4 relative overflow-hidden xl:h-36 h-36"
           onTouchStart={handleTouchStart}
           onTouchEnd={handleTouchEnd}
         >
@@ -192,7 +192,7 @@ const Topbar: React.FC = () => {
             {services.map((service) => (
               <div
                 key={service.id}
-                className="flex flex-col justify-center py-5 px-2 bg-bg-secondary shadow-lg rounded-xl"
+                className="flex flex-col justify-center py-5 px-2 bg-bg-secondary shadow-xl rounded-xl"
               >
                 <div className="container mx-auto flex p-2">
                   <div className="flex justify-center w-1/5 mr-2 text-primary dark:text-primary2 fill-current">

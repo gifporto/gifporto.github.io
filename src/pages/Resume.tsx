@@ -26,24 +26,24 @@ const Resume: React.FC = () => {
     };
 
     return (
-        <div className="md:px-0 px-2">
-            <div className="flex justify-between w-full md:w-3/4">
+        <div className="xl:px-0 px-2">
+            <div className="flex justify-between w-full xl:w-3/4">
                 <h2 className="text-2xl font-bold mb-4">Resume CV</h2>
                 {/* Tombol Download PDF */}
                 <button
                     onClick={handleDownloadPDF}
-                    className="btn-primary w-full md:w-auto py-2 px-4 rounded"
+                    className="btn-primary w-full xl:w-auto py-2 px-4 rounded"
                 >
                     Download PDF
                 </button>
             </div>
 
-            <div className="w-full md:w-3/4">
+            <div className="w-full xl:w-3/4">
                 {/* Bagian yang akan dicetak */}
                 <div
                     ref={printRef}
                     id="print-area"
-                    className="bg-white p-4 sm:p-6 md:p-8 text-black w-full rounded-lg"
+                    className="bg-white p-4 sm:p-6 xl:p-8 text-black w-full rounded-lg"
                 >
                     <section className="mb-8 text-center">
                         <h1 className="text-xl sm:text-2xl font-bold mb-2">

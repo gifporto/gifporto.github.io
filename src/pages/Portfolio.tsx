@@ -63,7 +63,7 @@ const Portfolio = () => {
   const direction = getDirection(activeTab, prevTab);
 
   return (
-    <div className="w-full md:px-0 px-2">
+    <div className="w-full xl:px-0 px-2">
       {/* Navbar Tabs */}
       <div className="flex space-x-6 mb-6 relative">
         {tabs.map((tab) => (
@@ -175,7 +175,7 @@ const Portfolio = () => {
             transition={{ duration: 0.4 }}
           >
             <h2 className="text-2xl font-bold mb-4">Design Projects</h2>
-            <div className="grid grid-cols-2 md:grid-cols-5 gap-2">
+            <div className="grid grid-cols-2 md:grid-cols-6 gap-2">
               {dataDesign.map((item, i) => (
                 <div key={i} className="flex flex-col">
                   <img

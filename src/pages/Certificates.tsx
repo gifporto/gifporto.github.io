@@ -3,7 +3,7 @@ import dataCertif from "@/data/certificate.json";
 const Certificates = () => {
   return (
     <>
-      <div className="w-full md:px-0 px-2">
+      <div className="w-full xl:px-0 px-2">
         <h2 className="text-2xl font-bold mb-4">Certificates</h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           {dataCertif.map((certif, i) => (
