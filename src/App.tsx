@@ -66,11 +66,11 @@ const App: React.FC = () => {
       </div> */}
 
       <div className="flex w-full xl:w-7xl">
-        <div className="w-full hidden xl:flex lg:w-1/12 bg-red-300 xl:sticky xl:top-0 h-screen py-8 z-10">
+        <div className="w-full hidden xl:flex lg:w-1/12 xl:sticky xl:top-0 h-screen py-8 z-10">
           {/* Sidebar dengan switch geser */}
           <Sidebar dark={dark} toggleDark={() => setDark((prev) => !prev)} />
         </div>
-        <div className="w-full xl:w-11/12 flex flex-col py-8 bg-blue-300">
+        <div className="w-full xl:w-11/12 flex flex-col py-8">
           <Topbar />
           <main className="mt-4">
             <ScrollToTop />
