@@ -15,6 +15,7 @@ import IconUIUX from "@/assets/service/icon-ui";
 import sosmed from "@/data/sosmed.json"
 import services from "@/data/services.json"
 import BlurText from "./BlurText";
+import { Link } from "react-router-dom";
 
 const iconMap: Record<string, React.ReactNode> = {
   IconFrontEnd: <IconFrontEnd />,
@@ -29,38 +30,6 @@ const iconMap: Record<string, React.ReactNode> = {
   IconLinkedin: <IconLinkedin />,
   IconGmail: <IconGmail />,
   IconGithub: <IconGithub />
-};
-
-const TypingServices: React.FC = () => {
-  const [index, setIndex] = useState(0); // service ke berapa
-  const [subIndex, setSubIndex] = useState(0); // karakter ke berapa
-  const [forward, setForward] = useState(true); // ngetik atau menghapus
-
-  const currentService = services[index].title;
-
-  useEffect(() => {
-    if (forward) {
-      if (subIndex < currentService.length) {
-        setTimeout(() => setSubIndex(subIndex + 1), 100); // kecepatan ngetik
-      } else {
-        setTimeout(() => setForward(false), 1500); // tunggu sebelum hapus
-      }
-    } else {
-      if (subIndex > 0) {
-        setTimeout(() => setSubIndex(subIndex - 1), 50); // kecepatan hapus
-      } else {
-        setForward(true);
-        setIndex((prev) => (prev + 1) % services.length); // ganti service
-      }
-    }
-  }, [subIndex, forward, currentService]);
-
-  return (
-    <h3 className="text-sm text-text h-6">
-      {currentService.substring(0, subIndex)}
-      <span className="border-r-2 border-primary animate-pulse ml-1"></span>
-    </h3>
-  );
 };
 
 const Topbar: React.FC = () => {
@@ -159,7 +128,6 @@ const Topbar: React.FC = () => {
                   text="Taufiq Aditya Putra"
                   easing="easeInOut"
                 />
-                <TypingServices />
                 <div className="mt-2 flex gap-2">
                   {sosmed.map((item) => (
                     <a
@@ -172,6 +140,11 @@ const Topbar: React.FC = () => {
                       <div className="size-4">{iconMap[item.icon]}</div>
                     </a>
                   ))}
+                </div>
+                <div className="mt-4">
+                  <Link to="/resume" className="bg-primary text-bg font-bold px-2 py-1 rounded-md">
+                    Resume CV
+                  </Link>
                 </div>
               </div>
             </div>
