@@ -18,6 +18,7 @@ import dataClient from "@/data/client.json";
 import dataTech from "@/data/tech.json"
 import dataFrontend from "@/data/frontend.json";
 import dataCertif from "@/data/certificate.json";
+import ExperienceCard from "@/components/ExperienceCard";
 
 const iconMap: Record<string, React.ReactNode> = {
     IconFrontEnd: <IconFrontEnd />,
@@ -95,8 +96,19 @@ const About = () => {
                         <h4 className="text-text text-xl font-semibold mb-2">Projects</h4>
                         <Link to="/portfolio" className="text-primary underline">See All</Link>
                     </div>
-                    <div className="max-w-screen py-4 relative overflow-hidden">
-                        <div className="absolute top-0 right-0 w-16 h-full bg-gradient-to-l from-bg to-transparent z-10 pointer-events-none"></div>
+                    <div
+                        className="max-w-screen py-4 relative overflow-hidden"
+                        style={{
+                            WebkitMaskImage:
+                                "linear-gradient(to right, rgba(0,0,0,1) 90%, rgba(0,0,0,0) 100%)",
+                            WebkitMaskRepeat: "no-repeat",
+                            WebkitMaskSize: "100% 100%",
+                            maskImage:
+                                "linear-gradient(to right, rgba(0,0,0,1) 90%, rgba(0,0,0,0) 100%)",
+                            maskRepeat: "no-repeat",
+                            maskSize: "100% 100%",
+                        }}
+                    >
                         <div
                             className="flex transition-transform duration-700 gap-4"
                             style={{
@@ -167,12 +179,19 @@ const About = () => {
                         <h4 className="text-text text-xl font-semibold mb-2">Certificates</h4>
                         <Link to="/certificates" className="text-primary underline">See All</Link>
                     </div>
-                    <div className="max-w-screen rounded-xl py-4 relative overflow-hidden">
-                        {/* Gradient kiri */}
-                        {/* <div className="absolute top-0 left-0 w-16 h-full bg-gradient-to-r from-bg to-transparent z-10 pointer-events-none"></div> */}
-                        {/* Gradient kanan */}
-                        <div className="absolute top-0 right-0 w-16 h-full bg-gradient-to-l from-bg to-transparent z-10 pointer-events-none"></div>
-
+                    <div
+                        className="max-w-screen py-4 relative overflow-hidden"
+                        style={{
+                            WebkitMaskImage:
+                                "linear-gradient(to right, rgba(0,0,0,1) 90%, rgba(0,0,0,0) 100%)",
+                            WebkitMaskRepeat: "no-repeat",
+                            WebkitMaskSize: "100% 100%",
+                            maskImage:
+                                "linear-gradient(to right, rgba(0,0,0,1) 90%, rgba(0,0,0,0) 100%)",
+                            maskRepeat: "no-repeat",
+                            maskSize: "100% 100%",
+                        }}
+                    >
                         <div
                             className="flex transition-transform duration-700 gap-4"
                             style={{
@@ -226,7 +245,7 @@ const About = () => {
                 {/* Clients */}
                 <div className="w-full md:w-2/3 xl:w-2/5 xl:px-0 px-2">
                     <h4 className="text-text text-xl font-semibold mb-2">Clients</h4>
-                    <div className="w-full bg-slate-800 rounded-xl py-4 flex justify-center">
+                    <div className="relative z-10 w-full bg-slate-800 rounded-xl py-4 flex justify-center">
                         <div className="grid xl:grid-cols-1 grid-cols-2 gap-4">
                             {dataClient.slice(1).map((card, i) => (
                                 <div key={i}>
@@ -258,6 +277,10 @@ const About = () => {
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" id="browser"><path d="M16 1a15 15 0 1 0 15 15A15 15 0 0 0 16 1Zm13 15a12.94 12.94 0 0 1-.64 4h-6.57a38 38 0 0 0 .21-4 38 38 0 0 0-.21-4H25a1 1 0 0 0 0-2h-3.49a19.39 19.39 0 0 0-2.12-6.54A13 13 0 0 1 29 16ZM16 29c-1.17 0-2.71-2.61-3.49-7h7c-.8 4.39-2.34 7-3.51 7Zm-3.78-9a37.24 37.24 0 0 1 0-8h7.57a36.45 36.45 0 0 1 .21 4 36.45 36.45 0 0 1-.22 4ZM16 3c1.17 0 2.71 2.61 3.49 7h-7c.8-4.39 2.34-7 3.51-7Zm-3.39.46A19.39 19.39 0 0 0 10.49 10h-6a13 13 0 0 1 8.12-6.54ZM3 16a12.94 12.94 0 0 1 .64-4h6.58a37.82 37.82 0 0 0 0 8H7a1 1 0 0 0 0 2h3.49a19.39 19.39 0 0 0 2.12 6.54A13 13 0 0 1 3 16Zm16.39 12.54A19.39 19.39 0 0 0 21.51 22h6a13 13 0 0 1-8.12 6.54Z" data-name="Layer 6"></path></svg>
                         </div>
                     </div>
+
+                    {/* <div className="mt-4">
+                        <ExperienceCard />
+                    </div> */}
                 </div>
             </div>
         </div >

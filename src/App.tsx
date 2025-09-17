@@ -43,8 +43,20 @@ const App: React.FC = () => {
   }, [dark]);
 
   return (
-    <body className="relative min-h-screen flex w-full justify-center text-text bg-bg">
-      <SplashCursor/>
+    <body className="relative overflow-x-hidden min-h-screen flex w-full justify-center text-text bg-bg">
+      <div
+        className="absolute overflow-hidden -z-0 inset-0 flex items-center justify-center h-full"
+        style={{
+          background:
+            "conic-gradient(from 180deg, rgba(255,0,0,0.4), rgba(255,255,0,0.3), rgba(0,0,255,0.4), rgba(255,0,0,0.4))",
+          filter: "blur(60px)",
+        }}
+      />
+
+      <SplashCursor
+        SPLAT_RADIUS={0.005}   // lebih kecil radius percikan
+        SPLAT_FORCE={30000}
+      />
 
       {/* Card Background Layer */}
       <div className="absolute overflow-hidden -z-10 inset-0 flex items-center justify-center h-full">
@@ -55,17 +67,7 @@ const App: React.FC = () => {
         />
       </div>
 
-      {/* <div>
-        <div
-          className="fixed -z-10 -left-40 -top-20 w-[520px] h-[520px] rounded-full bg-primary opacity-70 blur-3xl transform-gpu"
-          aria-hidden="true"></div>
-
-        <div
-          className="fixed -z-10 --20 -bottom-20 w-[520px] h-[420px] rounded-full bg-primary opacity-60 blur-2xl transform-gpu"
-          aria-hidden="true"></div>
-      </div> */}
-
-      <div className="flex w-full xl:w-7xl">
+      <div className="flex w-full xl:w-7xl relative z-10">
         <div className="w-full hidden xl:flex lg:w-1/12 xl:sticky xl:top-0 h-screen py-8 z-10">
           {/* Sidebar dengan switch geser */}
           <Sidebar dark={dark} toggleDark={() => setDark((prev) => !prev)} />

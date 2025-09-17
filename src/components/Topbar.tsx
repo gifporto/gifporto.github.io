@@ -156,8 +156,17 @@ const Topbar: React.FC = () => {
           className="w-full lg:w-1/3 xl:w-1/4 relative overflow-hidden xl:h-36 h-36"
           onTouchStart={handleTouchStart}
           onTouchEnd={handleTouchEnd}
+          style={{
+            WebkitMaskImage:
+              "linear-gradient(to bottom, rgba(0,0,0,1) 90%, rgba(0,0,0,0) 100%)",
+            WebkitMaskRepeat: "no-repeat",
+            WebkitMaskSize: "100% 100%",
+            maskImage:
+              "linear-gradient(to bottom, rgba(0,0,0,1) 90%, rgba(0,0,0,0) 100%)",
+            maskRepeat: "no-repeat",
+            maskSize: "100% 100%",
+          }}
         >
-          <div className="absolute bottom-0 w-full h-8 bg-gradient-to-t from-bg to-transparent z-10 pointer-events-none"></div>
           <div
             className="flex flex-col gap-6 transition-transform duration-700 ease-in-out"
             style={{ transform: `translateY(-${index * 26}%)` }}
@@ -194,6 +203,7 @@ const Topbar: React.FC = () => {
             ))}
           </div>
         </div>
+
       </div>
 
     </>
