@@ -4,7 +4,7 @@ import { Link, useLocation } from "react-router-dom";
 interface SidebarProps {
   dark: boolean;
   toggleDark: () => void;
-} 
+}
 
 const Sidebar: React.FC<SidebarProps> = ({ dark, toggleDark }) => {
   const location = useLocation();
@@ -68,11 +68,10 @@ const Sidebar: React.FC<SidebarProps> = ({ dark, toggleDark }) => {
         {/* Tombol Dark Mode */}
         <button
           onClick={toggleDark}
-          className={`w-12 h-6 flex items-center rounded-full p-1 transition-colors duration-300 ${dark ? "bg-gray-700" : "bg-gray-300"
-            }`}
+          className="w-12 h-6 flex items-center rounded-full p-1 transition-colors duration-300 bg-bg"
         >
           <div
-            className={`w-4 h-4 bg-white rounded-full shadow-md transform transition-transform duration-300 ${dark ? "translate-x-6" : ""
+            className={`w-4 h-4 bg-primary shadow-primary/50 rounded-full shadow-md transform transition-transform duration-300 ${dark ? "translate-x-6" : ""
               }`}
           />
         </button>
@@ -84,13 +83,13 @@ const Sidebar: React.FC<SidebarProps> = ({ dark, toggleDark }) => {
               key={link.to}
               to={link.to}
               className={`relative group flex items-center justify-center ${location.pathname === link.to
-                ? "text-primary"
-                : "text-gray-500 hover:text-primary"
+                ? "text-primary drop-shadow-lg drop-shadow-primary"
+                : "text-gray-500 hover:text-primary hover:drop-shadow-lg hover:drop-shadow-primary"
                 }`}
             >
               {link.icon}
               {/* Tooltip teks */}
-              <span className="absolute left-10 w-fit px-2 py-1 text-xs rounded-md bg-bg-secondary shadow-lg shadow-primary/30 text-primary font-semibold opacity-0 group-hover:opacity-100 transition-all">
+              <span className="absolute z-50 left-10 w-fit px-2 py-1 text-xs rounded-md bg-bg-secondary shadow-lg shadow-primary/30 text-primary font-semibold opacity-0 group-hover:opacity-100 transition-all">
                 {link.label}
               </span>
             </Link>

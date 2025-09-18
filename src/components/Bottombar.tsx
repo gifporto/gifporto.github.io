@@ -68,10 +68,10 @@ const Bottombar: React.FC<SidebarProps> = ({ dark, toggleDark }) => {
         <div className="flex justify-between">
           <button
             onClick={toggleDark}
-            className="w-12 h-6 flex items-center rounded-full p-1 transition-colors duration-300 bg-primary/40"
+            className="w-12 h-6 flex items-center rounded-full p-1 transition-colors duration-300 bg-bg"
           >
             <div
-              className={`w-4 h-4 bg-bg-secondary rounded-full shadow-md transform transition-transform duration-300 ${dark ? "translate-x-6" : ""
+              className={`w-4 h-4 bg-primary shadow-primary/50 rounded-full shadow-md transform transition-transform duration-300 ${dark ? "translate-x-6" : ""
                 }`}
             />
           </button>
@@ -81,7 +81,7 @@ const Bottombar: React.FC<SidebarProps> = ({ dark, toggleDark }) => {
                 key={link.to}
                 to={link.to}
                 className={`relative group flex items-center justify-center text-xs ${location.pathname === link.to
-                  ? "text-primary"
+                  ? "text-primary drop-shadow-lg drop-shadow-primary"
                   : "text-gray-500 hover:text-primary"
                   }`}
               >

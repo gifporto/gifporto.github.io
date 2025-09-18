@@ -131,7 +131,7 @@ const About = () => {
                                         <h5 className="text-text mt-3 font-semibold">
                                             {item.title}
                                         </h5>
-                                        <p className="text-text-seconday text-sm mt-1">
+                                        <p className="text-text-seconday text-xs mt-1">
                                             {item.description}
                                         </p>
                                     </div>
@@ -156,6 +156,7 @@ const About = () => {
                             }
                             className="absolute top-1/2 left-2 -translate-y-1/2 w-10 h-10 flex justify-center items-center bg-bg-secondary/50 text-text p-2 rounded-full"
                         >
+                            ‹
                         </button>
 
                         <button
@@ -212,7 +213,7 @@ const About = () => {
                                         <h5 className="text-text font-semibold">
                                             {certif.title}
                                         </h5>
-                                        <p className="text-text-seconday text-sm mt-1">
+                                        <p className="text-text-seconday text-xs mt-1">
                                             {certif.description}
                                         </p>
                                     </div>

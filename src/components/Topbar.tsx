@@ -153,7 +153,7 @@ const Topbar: React.FC = () => {
 
         {/* card y */}
         <div
-          className="w-full lg:w-1/3 xl:w-1/4 relative overflow-hidden xl:h-36 h-36"
+          className="w-full lg:w-1/3 xl:w-1/4 relative overflow-hidden xl:h-40 h-36"
           onTouchStart={handleTouchStart}
           onTouchEnd={handleTouchEnd}
           style={{
@@ -168,16 +168,16 @@ const Topbar: React.FC = () => {
           }}
         >
           <div
-            className="flex flex-col gap-6 transition-transform duration-700 ease-in-out"
-            style={{ transform: `translateY(-${index * 26}%)` }}
+            className="flex flex-col gap-6 py-4 lg:py-0 transition-transform duration-700 ease-in-out"
+            style={{ transform: `translateY(-${index * 25}%)` }}
           >
             {services.map((service) => (
               <div
                 key={service.id}
                 className="flex flex-col justify-center py-5 px-2 bg-bg-secondary shadow-xl rounded-xl"
               >
-                <div className="container mx-auto flex p-2">
-                  <div className="flex justify-center w-1/5 mr-2 text-primary dark:text-primary2 fill-current">
+                <div className="container mx-auto flex gap-4 items-center p-2">
+                  <div className="flex justify-center w-fit text-primary dark:text-primary2 fill-current">
                     {iconMap[service.icon]}
                   </div>
                   <div className="px-0 flex-1">
@@ -192,12 +192,12 @@ const Topbar: React.FC = () => {
           </div>
 
           {/* Indicator */}
-          <div className="absolute top-1/2 right-2 -translate-y-1/2 flex flex-col gap-2">
+          <div className="absolute top-1/2 pb-2 right-2 -translate-y-1/2 flex flex-col gap-2">
             {services.map((_, i) => (
               <button
                 key={i}
                 onClick={() => setIndex(i)}
-                className={`w-3 h-3 rounded-full transition-colors ${i === index ? "bg-primary" : "bg-gray-400"
+                className={`w-3 h-3 rounded-full transition-colors ${i === index ? "bg-primary" : "bg-bg"
                   }`}
               />
             ))}

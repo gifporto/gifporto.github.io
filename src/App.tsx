@@ -44,14 +44,14 @@ const App: React.FC = () => {
 
   return (
     <body className="relative overflow-x-hidden min-h-screen flex w-full justify-center text-text bg-bg">
-      <div
-        className="absolute overflow-hidden -z-0 inset-0 flex items-center justify-center h-full"
+      {/* <div
+        className="fixed overflow-hidden -z-0 inset-0 flex items-center justify-center h-full"
         style={{
           background:
             "conic-gradient(from 180deg, rgba(255,0,0,0.4), rgba(255,255,0,0.3), rgba(0,0,255,0.4), rgba(255,0,0,0.4))",
           filter: "blur(60px)",
         }}
-      />
+      /> */}
 
       <SplashCursor
         SPLAT_RADIUS={0.005}   // lebih kecil radius percikan
@@ -68,7 +68,7 @@ const App: React.FC = () => {
       </div>
 
       <div className="flex w-full xl:w-7xl relative z-10">
-        <div className="w-full hidden xl:flex lg:w-1/12 xl:sticky xl:top-0 h-screen py-8 z-10">
+        <div className="w-full hidden xl:flex lg:w-1/12 xl:sticky xl:top-0 h-screen py-8 z-20">
           {/* Sidebar dengan switch geser */}
           <Sidebar dark={dark} toggleDark={() => setDark((prev) => !prev)} />
         </div>
