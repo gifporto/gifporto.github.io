@@ -77,7 +77,7 @@ const Topbar: React.FC = () => {
           {/* Foto */}
           <div className="absolute z-20 bottom-0 right-0 xl:-translate-x-2 w-48 overflow-hidden">
             <img
-              src="./img/myfoto3.png"
+              src="./img/myfoto4.png"
               alt="Taufiq Aditya"
               className="max-w-full drop-shadow-xl drop-shadow-primary/70"
             />
