@@ -1,16 +1,26 @@
-import React from "react";
-import { Link, useLocation } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { useLocation } from "react-router-dom";
 
 interface SidebarProps {
   dark: boolean;
   toggleDark: () => void;
+  activePage: string;
+  onNavigate: (page: string) => void;
 }
 
-const Sidebar: React.FC<SidebarProps> = ({ dark, toggleDark }) => {
+const Sidebar: React.FC<SidebarProps> = ({ dark, toggleDark, activePage, onNavigate }) => {
   const location = useLocation();
+  const [currentPage, setCurrentPage] = useState(activePage);
+
+  // Set halaman awal berdasarkan URL
+  useEffect(() => {
+    const path = location.pathname.replace("/", "") || "about"; // default "about"
+    setCurrentPage(path);
+  }, [location.pathname]);
+
   const links = [
     {
-      to: "/",
+      key: "about",
       label: "AboutMe",
       icon: (
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -24,7 +34,7 @@ const Sidebar: React.FC<SidebarProps> = ({ dark, toggleDark }) => {
       ),
     },
     {
-      to: "/portfolio",
+      key: "portfolio",
       label: "Portfolio",
       icon: (
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -37,7 +47,7 @@ const Sidebar: React.FC<SidebarProps> = ({ dark, toggleDark }) => {
       ),
     },
     {
-      to: "/certificates",
+      key: "certificates",
       label: "Certificates",
       icon: (
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -48,7 +58,7 @@ const Sidebar: React.FC<SidebarProps> = ({ dark, toggleDark }) => {
       ),
     },
     {
-      to: "/resume",
+      key: "resume",
       label: "Resume",
       icon: (
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -62,41 +72,41 @@ const Sidebar: React.FC<SidebarProps> = ({ dark, toggleDark }) => {
     },
   ];
 
-  return (
-    <>
-      <nav className="bg-bg-secondary h-full rounded-2xl flex flex-col justify-self-start p-4 gap-8">
-        {/* Tombol Dark Mode */}
-        <button
-          onClick={toggleDark}
-          className="w-12 h-6 flex items-center rounded-full p-1 transition-colors duration-300 bg-bg"
-        >
-          <div
-            className={`w-4 h-4 bg-primary shadow-primary/50 rounded-full shadow-md transform transition-transform duration-300 ${dark ? "translate-x-6" : ""
-              }`}
-          />
-        </button>
+  const handleClick = (key: string) => {
+    setCurrentPage(key);
+    onNavigate(key);
+  };
 
-        {/* Link dengan Icon */}
-        <div className="flex flex-col justify-center items-center gap-6">
-          {links.map((link) => (
-            <Link
-              key={link.to}
-              to={link.to}
-              className={`relative group flex items-center justify-center ${location.pathname === link.to
+  return (
+    <nav className="bg-bg-secondary h-full rounded-2xl flex flex-col justify-self-start p-4 gap-8">
+      <button
+        onClick={toggleDark}
+        className="w-12 h-6 flex items-center rounded-full p-1 transition-colors duration-300 bg-bg"
+      >
+        <div
+          className={`w-4 h-4 bg-primary shadow-primary/50 rounded-full shadow-md transform transition-transform duration-300 ${dark ? "translate-x-6" : ""
+            }`}
+        />
+      </button>
+
+      <div className="flex flex-col justify-center items-center gap-6">
+        {links.map((link) => (
+          <button
+            key={link.key}
+            onClick={() => handleClick(link.key)}
+            className={`relative group flex items-center justify-center hover:cursor-pointer ${currentPage === link.key
                 ? "text-primary drop-shadow-lg drop-shadow-primary"
                 : "text-gray-500 hover:text-primary hover:drop-shadow-lg hover:drop-shadow-primary"
-                }`}
-            >
-              {link.icon}
-              {/* Tooltip teks */}
-              <span className="absolute z-50 left-10 w-fit px-2 py-1 text-xs rounded-md bg-bg-secondary shadow-lg shadow-primary/30 text-primary font-semibold opacity-0 group-hover:opacity-100 transition-all">
-                {link.label}
-              </span>
-            </Link>
-          ))}
-        </div>
-      </nav>
-    </>
+              }`}
+          >
+            {link.icon}
+            <span className="absolute z-50 left-10 w-fit px-2 py-1 text-xs rounded-md bg-bg-secondary shadow-lg shadow-primary/30 text-primary font-semibold opacity-0 group-hover:opacity-100 transition-all">
+              {link.label}
+            </span>
+          </button>
+        ))}
+      </div>
+    </nav>
   );
 };
 

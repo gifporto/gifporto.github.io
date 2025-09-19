@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { Routes, Route, useLocation } from "react-router-dom";
 import About from "@/pages/About";
 import Portfolio from "@/pages/Portfolio";
 import Certificates from "@/pages/Certificates";
@@ -9,31 +8,16 @@ import Sidebar from "@/components/Sidebar";
 import Bottombar from "@/components/Bottombar";
 import SplashCursor from "./components/SplashCursor";
 
-// Komponen ScrollToTop
-const ScrollToTop: React.FC = () => {
-  const { pathname } = useLocation();
-
-  useEffect(() => {
-    window.scrollTo(0, 0); // langsung ke atas tanpa animasi
-  }, [pathname]);
-
-  return null;
-};
-
 const App: React.FC = () => {
   const [dark, setDark] = useState<boolean>(false);
+  const [activePage, setActivePage] = useState<string>("about"); // ⬅️ kontrol manual page aktif
 
-  // Cek theme dari browser/OS saat pertama kali load
+  // Cek theme dari browser/OS
   useEffect(() => {
     const prefersDark = window.matchMedia("(prefers-color-scheme: dark)");
-
-    // Set sesuai system preference
     setDark(prefersDark.matches);
-
-    // Listener kalau user ubah theme OS/browser
     const listener = (e: MediaQueryListEvent) => setDark(e.matches);
     prefersDark.addEventListener("change", listener);
-
     return () => prefersDark.removeEventListener("change", listener);
   }, []);
 
@@ -42,52 +26,54 @@ const App: React.FC = () => {
     document.documentElement.classList.toggle("dark", dark);
   }, [dark]);
 
+  const renderPage = () => {
+    switch (activePage) {
+      case "portfolio":
+        return <Portfolio />;
+      case "certificates":
+        return <Certificates />;
+      case "resume":
+        return <Resume />;
+      default:
+        return <About />;
+    }
+  };
+
   return (
     <body className="relative overflow-x-hidden min-h-screen flex w-full justify-center text-text bg-bg">
-      {/* <div
-        className="fixed overflow-hidden -z-0 inset-0 flex items-center justify-center h-full"
-        style={{
-          background:
-            "conic-gradient(from 180deg, rgba(255,0,0,0.4), rgba(255,255,0,0.3), rgba(0,0,255,0.4), rgba(255,0,0,0.4))",
-          filter: "blur(60px)",
-        }}
-      /> */}
-
-      <SplashCursor
-        SPLAT_RADIUS={0.005}   // lebih kecil radius percikan
-        SPLAT_FORCE={30000}
-      />
+      <SplashCursor SPLAT_RADIUS={0.005} SPLAT_FORCE={30000} />
 
       {/* Card Background Layer */}
       <div className="absolute overflow-hidden -z-10 inset-0 flex items-center justify-center h-full">
         <div className="absolute w-full h-full bg-[#0f172a] transition-all duration-700"></div>
         <div
-          className={`absolute w-full h-full bg-[#ebebeb] transition-transform duration-700 ${dark ? "translate-x-full" : "translate-x-0"
-            }`}
+          className={`absolute w-full h-full bg-[#ebebeb] transition-transform duration-700 ${
+            dark ? "translate-x-full" : "translate-x-0"
+          }`}
         />
       </div>
 
       <div className="flex w-full xl:w-7xl relative z-10">
         <div className="w-full hidden xl:flex lg:w-1/12 xl:sticky xl:top-0 h-screen py-8 z-20">
-          {/* Sidebar dengan switch geser */}
-          <Sidebar dark={dark} toggleDark={() => setDark((prev) => !prev)} />
+          <Sidebar
+            dark={dark}
+            toggleDark={() => setDark((prev) => !prev)}
+            activePage={activePage}
+            onNavigate={setActivePage}
+          />
         </div>
         <div className="w-full xl:w-11/12 flex flex-col py-8">
           <Topbar />
-          <main className="mt-4">
-            <ScrollToTop />
-            <Routes>
-              <Route path="/" element={<About />} />
-              <Route path="/portfolio" element={<Portfolio />} />
-              <Route path="/certificates" element={<Certificates />} />
-              <Route path="/resume" element={<Resume />} />
-            </Routes>
-          </main>
+          <main className="mt-4">{renderPage()}</main>
         </div>
       </div>
       <div className="sticky z-10 bottom-0 p-2 xl:hidden w-full">
-        {/* Bottombar juga ada switch geser */}
-        <Bottombar dark={dark} toggleDark={() => setDark((prev) => !prev)} />
+        <Bottombar
+          dark={dark}
+          toggleDark={() => setDark((prev) => !prev)}
+          activePage={activePage}
+          onNavigate={setActivePage}
+        />
       </div>
     </body>
   );

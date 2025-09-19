@@ -135,14 +135,14 @@ const Topbar: React.FC = () => {
                       href={item.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="w-8 h-8 rounded-full flex justify-center items-center border-2 border-primary text-primary hover:text-white shadow-xl hover:shadow-primary/50 transition ease-in-out"
+                      className="w-8 h-8 rounded-full flex justify-center items-center border-2 border-primary text-primary hover:text-bg-secondary hover:bg-primary shadow-xl hover:shadow-primary/50 transition ease-in-out"
                     >
                       <div className="size-4">{iconMap[item.icon]}</div>
                     </a>
                   ))}
                 </div>
                 <div className="mt-4">
-                  <Link to="/resume" className="bg-primary text-bg font-bold px-2 py-1 rounded-md">
+                  <Link to="/resume" className="bg-primary text-bg text-sm font-bold px-2 py-1 rounded-md">
                     Resume CV
                   </Link>
                 </div>
