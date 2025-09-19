@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 
 import IconFrontEnd from "@/assets/service/icon-fe";
 import IconGraphicDesign from "@/assets/service/icon-graph";
@@ -60,7 +59,11 @@ function getTranslateValue(index: number, screenWidth: number) {
     }
 }
 
-const About = () => {
+interface AboutProps {
+  onNavigate?: (page: string) => void;
+}
+
+const About: React.FC<AboutProps> = ({ onNavigate }) => {
     const [currentProject, setCurrentProject] = useState(0);
     const [currentCertif, setCurrentCertif] = useState(0);
     const screenWidth = useScreenWidth();
@@ -94,7 +97,7 @@ const About = () => {
                 <div className="w-full">
                     <div className="flex justify-between xl:px-0 px-2">
                         <h4 className="text-text text-xl font-semibold mb-2">Projects</h4>
-                        <Link to="/portfolio" className="text-primary underline">See All</Link>
+                        <button onClick={() => onNavigate?.("portfolio")} className="text-primary underline">See All</button>
                     </div>
                     <div
                         className="max-w-screen py-4 relative overflow-hidden"
@@ -178,7 +181,7 @@ const About = () => {
                 <div className="w-full">
                     <div className="flex justify-between xl:px-0 px-2">
                         <h4 className="text-text text-xl font-semibold mb-2">Certificates</h4>
-                        <Link to="/certificates" className="text-primary underline">See All</Link>
+                        <button onClick={() => onNavigate?.("certificates")} className="text-primary underline">See All</button>
                     </div>
                     <div
                         className="max-w-screen py-4 relative overflow-hidden"
@@ -246,7 +249,7 @@ const About = () => {
                 {/* Clients */}
                 <div className="w-full md:w-2/3 xl:w-2/5 xl:px-0 px-2">
                     <h4 className="text-text text-xl font-semibold mb-2">Clients</h4>
-                    <div className="relative z-10 w-full bg-slate-800 rounded-xl py-4 flex justify-center">
+                    <div className="relative z-10 w-full bg-slate-800/70 rounded-xl py-4 flex justify-center">
                         <div className="grid xl:grid-cols-1 grid-cols-2 gap-4">
                             {dataClient.slice(1).map((card, i) => (
                                 <div key={i}>
@@ -266,7 +269,7 @@ const About = () => {
                 {/* Services */}
                 <div className="w-full md:w-1/3 xl:w-3/5 xl:px-0 px-2">
                     <h4 className="text-text text-xl font-semibold mb-2">Technology</h4>
-                    <div className="relative overflow-hidden px-4 py-6 bg-bg-secondary shadow-xl rounded-xl">
+                    <div className="relative overflow-hidden px-4 py-6 bg-bg-secondary/70 shadow-xl rounded-xl">
                         <div className="flex flex-wrap gap-2 relative">
                             {dataTech.map((item, i) => (
                                 <div key={i}>

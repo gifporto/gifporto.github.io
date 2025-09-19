@@ -7,10 +7,11 @@ import Topbar from "@/components/Topbar";
 import Sidebar from "@/components/Sidebar";
 import Bottombar from "@/components/Bottombar";
 import SplashCursor from "./components/SplashCursor";
+import Particles from "./components/Particles";
 
 const App: React.FC = () => {
   const [dark, setDark] = useState<boolean>(false);
-  const [activePage, setActivePage] = useState<string>("about"); // ⬅️ kontrol manual page aktif
+  const [activePage, setActivePage] = useState<string>("about");
 
   // Cek theme dari browser/OS
   useEffect(() => {
@@ -35,21 +36,33 @@ const App: React.FC = () => {
       case "resume":
         return <Resume />;
       default:
-        return <About />;
+        return <About onNavigate={setActivePage} />;
     }
   };
 
   return (
     <body className="relative overflow-x-hidden min-h-screen flex w-full justify-center text-text bg-bg">
-      <SplashCursor SPLAT_RADIUS={0.005} SPLAT_FORCE={30000} />
+      {/* <SplashCursor SPLAT_RADIUS={0.005} SPLAT_FORCE={30000} /> */}
+
+      <div className="fixed overflow-hidden z-0 inset-0 flex items-center justify-center h-full">
+        <Particles
+          particleColors={['#3D74B6', '#B4E50D']}
+          particleCount={200}
+          particleSpread={10}
+          speed={0.1}
+          particleBaseSize={100}
+          moveParticlesOnHover={true}
+          alphaParticles={false}
+          disableRotation={false}
+        />
+      </div>
 
       {/* Card Background Layer */}
       <div className="absolute overflow-hidden -z-10 inset-0 flex items-center justify-center h-full">
         <div className="absolute w-full h-full bg-[#0f172a] transition-all duration-700"></div>
         <div
-          className={`absolute w-full h-full bg-[#ebebeb] transition-transform duration-700 ${
-            dark ? "translate-x-full" : "translate-x-0"
-          }`}
+          className={`absolute w-full h-full bg-[#ebebeb] transition-transform duration-700 ${dark ? "translate-x-full" : "translate-x-0"
+            }`}
         />
       </div>
 
@@ -63,7 +76,7 @@ const App: React.FC = () => {
           />
         </div>
         <div className="w-full xl:w-11/12 flex flex-col py-8">
-          <Topbar />
+          <Topbar onNavigate={setActivePage} />
           <main className="mt-4">{renderPage()}</main>
         </div>
       </div>

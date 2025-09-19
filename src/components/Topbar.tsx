@@ -15,7 +15,6 @@ import IconUIUX from "@/assets/service/icon-ui";
 import sosmed from "@/data/sosmed.json"
 import services from "@/data/services.json"
 import BlurText from "./BlurText";
-import { Link } from "react-router-dom";
 
 const iconMap: Record<string, React.ReactNode> = {
   IconFrontEnd: <IconFrontEnd />,
@@ -32,7 +31,11 @@ const iconMap: Record<string, React.ReactNode> = {
   IconGithub: <IconGithub />
 };
 
-const Topbar: React.FC = () => {
+interface TopbarProps {
+  onNavigate?: (page: string) => void; // tambahkan prop
+}
+
+const Topbar: React.FC<TopbarProps> = ({ onNavigate }) => {
   const [index, setIndex] = useState(0);
   const [startY, setStartY] = useState<number | null>(null);
 
@@ -86,7 +89,7 @@ const Topbar: React.FC = () => {
           {/* Card dengan background SVG */}
           <div className="w-full h-fit relative px-6 py-6 xl:py-4 shadow-xl rounded-xl overflow-hidden">
             {/* SVG Background */}
-            <div className="absolute inset-0 pointer-events-none bg-bg-secondary">
+            <div className="absolute inset-0 pointer-events-none bg-bg-secondary/70">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 1200 360"
@@ -142,10 +145,14 @@ const Topbar: React.FC = () => {
                   ))}
                 </div>
                 <div className="mt-4">
-                  <Link to="/resume" className="bg-primary text-bg text-sm font-bold px-2 py-1 rounded-md">
+                  <button
+                    onClick={() => onNavigate && onNavigate("resume")}
+                    className="bg-primary text-bg text-sm font-bold px-2 py-1 rounded-md"
+                  >
                     Resume CV
-                  </Link>
+                  </button>
                 </div>
+
               </div>
             </div>
           </div>
@@ -174,7 +181,7 @@ const Topbar: React.FC = () => {
             {services.map((service) => (
               <div
                 key={service.id}
-                className="flex flex-col justify-center py-5 px-2 bg-bg-secondary shadow-xl rounded-xl"
+                className="flex flex-col justify-center py-5 px-2 bg-bg-secondary/70 shadow-xl rounded-xl"
               >
                 <div className="container mx-auto flex gap-4 items-center p-2">
                   <div className="flex justify-center w-fit text-primary dark:text-primary2 fill-current">
