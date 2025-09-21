@@ -160,7 +160,7 @@ const Topbar: React.FC<TopbarProps> = ({ onNavigate }) => {
 
         {/* card y */}
         <div
-          className="w-full lg:w-1/3 xl:w-1/4 relative overflow-hidden xl:h-40 h-36"
+          className="w-full lg:w-1/3 xl:w-1/4 relative xl:h-40 h-36"
           onTouchStart={handleTouchStart}
           onTouchEnd={handleTouchEnd}
           style={{
@@ -181,7 +181,7 @@ const Topbar: React.FC<TopbarProps> = ({ onNavigate }) => {
             {services.map((service) => (
               <div
                 key={service.id}
-                className="flex flex-col justify-center py-5 px-2 bg-bg-secondary/70 shadow-xl rounded-xl"
+                className="flex flex-col justify-center py-5 px-2 bg-bg-secondary/70 rounded-xl"
               >
                 <div className="container mx-auto flex gap-4 items-center p-2">
                   <div className="flex justify-center w-fit text-primary dark:text-primary2 fill-current">
