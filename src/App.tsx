@@ -41,7 +41,7 @@ const App: React.FC = () => {
   };
 
   return (
-    <body className="relative overflow-x-hidden min-h-screen flex w-full justify-center text-text bg-bg">
+    <body className="relative overflow-x-hidden min-h-screen w-full text-text bg-bg">
       {/* <SplashCursor SPLAT_RADIUS={0.005} SPLAT_FORCE={30000} /> */}
 
       <div className="fixed overflow-hidden z-0 inset-0 flex items-center justify-center h-full">
@@ -66,7 +66,7 @@ const App: React.FC = () => {
         />
       </div>
 
-      <div className="flex w-full xl:w-7xl relative z-10">
+      <div className="relative z-10 w-full max-w-7xl mx-auto flex">
         <div className="w-full hidden xl:flex lg:w-1/12 xl:sticky xl:top-0 h-screen py-8 z-20">
           <Sidebar
             dark={dark}

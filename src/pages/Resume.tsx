@@ -21,7 +21,7 @@ const iconMap: Record<string, React.ReactNode> = {
 const Resume: React.FC = () => {
     const printRef = useRef<HTMLDivElement>(null);
 
-    const handleDownloadPDF = () => {
+     const handleDownloadPDF = () => {
         const originalTitle = document.title;
         const today = new Date().toISOString().split("T")[0]; // hasil: 2025-09-21
         document.title = `Resume_TaufiqAdityaPutra_${today}`;
@@ -50,7 +50,7 @@ const Resume: React.FC = () => {
                     className="bg-white p-4 sm:p-6 xl:p-8 text-black w-full rounded-lg"
                 >
                     <section className="mb-8 text-center">
-                        <h1 className="text-xl sm:text-2xl font-bold mb-2">
+                        <h1 className="text-xl lg:text-3xl font-bold mb-2">
                             Taufiq Aditya Putra
                         </h1>
                         <h2 className="flex flex-wrap gap-2 justify-center text-xs sm:text-sm text-gray-500">
@@ -162,33 +162,27 @@ const Resume: React.FC = () => {
                 <style>
                     {`
             @media print {
-  @page {
-    size: A4;
-    margin: 0; /* hilangkan margin bawaan */
-  }
-  body {
-    margin: 0;
-    padding: 0;
-  }
-  body * {
-    visibility: hidden;
-  }
-  #print-area, #print-area * {
-    visibility: visible;
-  }
-  #print-area {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%; /* full lebar halaman */
-    margin: 0 !important;
-    padding: 20mm 0 !important;
-  }
-  head, title {
-    display: none !important;
-  }
-}
-
+              @page {
+                size: A4;
+                margin: 15mm 5mm;
+              }
+              body * {
+                visibility: hidden;
+                margin: 0;
+              }
+              #print-area, #print-area * {
+                visibility: visible;
+              }
+              #print-area {
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+              }
+              head, title {
+                display: none !important;
+              }
+            }
           `}
                 </style>
             </div>
