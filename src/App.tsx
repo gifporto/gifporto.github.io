@@ -50,8 +50,8 @@ const App: React.FC = () => {
           particleCount={200}
           particleSpread={10}
           speed={0.1}
-          particleBaseSize={100}
-          moveParticlesOnHover={true}
+          particleBaseSize={300}
+          moveParticlesOnHover={false}
           alphaParticles={false}
           disableRotation={false}
         />
@@ -65,6 +65,21 @@ const App: React.FC = () => {
             }`}
         />
       </div>
+
+      <div className="fixed w-full h-screen overflow-hidden">
+        {/* Bulat besar kanan atas */}
+        <div className="absolute -top-32 -right-32 w-96 h-96 bg-blue-400 rounded-full mix-blend-multiply filter blur-3xl opacity-40"></div>
+
+        {/* Bulat besar kiri bawah */}
+        <div className="absolute -bottom-32 -left-32 w-96 h-96 bg-purple-400 rounded-full mix-blend-multiply filter blur-3xl opacity-40"></div>
+
+        {/* Bulat kecil tengah */}
+        <div className="absolute top-1/2 left-1/3 w-32 h-32 bg-orange-400 rounded-full mix-blend-multiply filter blur-2xl opacity-60"></div>
+
+        {/* Bulat tambahan (opsional biar mirip desain) */}
+        <div className="absolute top-1/4 right-1/4 w-40 h-40 bg-blue-500 rounded-full mix-blend-multiply filter blur-2xl opacity-50"></div>
+      </div>
+
 
       <div className="relative z-10 w-full max-w-7xl mx-auto flex">
         <div className="w-full hidden xl:flex lg:w-1/12 xl:sticky xl:top-0 h-screen py-8 z-20">

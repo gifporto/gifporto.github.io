@@ -33,8 +33,10 @@
   --color-text-secondary: #c3c3c3
 }
 
-.btn-primary{
+.btn-primary {
   @apply bg-primary text-bg font-semibold hover:opacity-70 cursor-pointer px-4 py-2 rounded-lg w-fit h-fit;
 }
 
-
+.card-glass {
+  @apply bg-white/10 rounded-2xl backdrop-blur-md bg-gradient-to-tr from-white/5 to-white/20 border border-white/20 shadow-lg transition-transform transform;
+}

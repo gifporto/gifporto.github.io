@@ -3,7 +3,7 @@
     "title": "DevLab",
     "date": "2025",
     "description": "Software agent for developing and delivering custom systems and applications",
-    "img": "./img/devlab.png",
+    "img": "./img/web-devlab.png",
     "link": "https://gifporto.github.io/devlab/",
     "tech1": "IconVue",
     "tech2": "IconTailwind"
@@ -12,8 +12,8 @@
     "title": "Super Sapen",
     "date": "2025",
     "description": "Registration, new student enrollment, and payment at SD Muhammadiyah Sapen.",
-    "img": "./img/web17.png",
-    "link": "https://supersapen.com/landingPage",
+    "img": "./img/web-superSapen.png",
+    "link": "https://supersapen.com",
     "tech1": "IconReact",
     "tech2": "IconTailwind"
   },
@@ -21,7 +21,7 @@
     "title": "Etical Clearance.",
     "date": "2024",
     "description": "Managing Ethical Clearance in the Faculty of Medicine.",
-    "img": "./img/web16.png",
+    "img": "./img/web-ethicalClerance.png",
     "link": "",
     "tech1": "IconLaravel",
     "tech2": "IconTailwind"
@@ -30,8 +30,17 @@
     "title": "WCU UAD.",
     "date": "2024",
     "description": "Display graphs and rankings of UAD University's achievements.",
-    "img": "./img/web15.png",
+    "img": "./img/web-wcu.png",
     "link": "",
+    "tech1": "IconLaravel",
+    "tech2": "IconTailwind"
+  },
+  {
+    "title": "Partnership UAD.",
+    "date": "2024",
+    "description": "An integrated portal to manage and evaluate university partnerships UAD Campus.",
+    "img": "./img/web-partnership.png",
+    "link": "https://partnership.uad.ac.id/",
     "tech1": "IconLaravel",
     "tech2": "IconTailwind"
   },
@@ -39,8 +48,8 @@
     "title": "HKI UAD.",
     "date": "2024",
     "description": "Providing intellectual property management services at UAD campus.",
-    "img": "./img/web14.png",
-    "link": "",
+    "img": "./img/web-hki.png",
+    "link": "https://ipr.uad.ac.id/",
     "tech1": "IconLaravel",
     "tech2": "IconBotstrap"
   },
@@ -48,8 +57,8 @@
     "title": "KlinikKampus.",
     "date": "2024",
     "description": "Website for requesting a doctor’s appointment on the UAD campus.",
-    "img": "./img/web11.png",
-    "link": "https://klinik.uad.ac.id/login",
+    "img": "./img/web-klinikKampus.png",
+    "link": "https://klinik.uad.ac.id",
     "tech1": "IconLaravel",
     "tech2": "IconBotstrap"
   },
@@ -57,7 +66,7 @@
     "title": "CSR GunungKidul.",
     "date": "2024",
     "description": "Website for funding applications for community activities in Gunung Kidul.",
-    "img": "./img/web13.png",
+    "img": "./img/web-csr-gunkid.png",
     "link": "",
     "tech1": "IconCodeIgniter",
     "tech2": "IconBotstrap"
@@ -66,7 +75,7 @@
     "title": "Sapto.",
     "date": "2024",
     "description": "Website for Program and University Accreditation.",
-    "img": "./img/web9.png",
+    "img": "./img/web-sapto.png",
     "link": "https://sapto2.banpt.or.id/",
     "tech1": "IconCodeIgniter",
     "tech2": "IconBotstrap"
@@ -75,16 +84,16 @@
     "title": "E-Office.",
     "date": "2024",
     "description": "Website for verifying inter-office letters at UAD.",
-    "img": "./img/web8.png",
+    "img": "./img/web-eoffice.png",
     "link": "",
     "tech1": "IconCodeIgniter",
     "tech2": "IconBotstrap"
   },
   {
-    "title": "E-FrontOffice.",
+    "title": "Helpdesk BSI.",
     "date": "2024",
     "description": "Website for bureau services at UAD.",
-    "img": "./img/web10.png",
+    "img": "./img/web-helpdesk.png",
     "link": "",
     "tech1": "IconCodeIgniter",
     "tech2": "IconBotstrap"
@@ -93,7 +102,7 @@
     "title": "DoctorMuda.",
     "date": "2024",
     "description": "Website that records the activities of students from the Faculty of Medicine at UAD",
-    "img": "./img/web7.png",
+    "img": "./img/web-doctormuda.png",
     "link": "https://dokma.uad.ac.id/",
     "tech1": "IconCodeIgniter",
     "tech2": "IconBotstrap"
@@ -102,7 +111,7 @@
     "title": "Giporto.",
     "date": "2023",
     "description": "Dynamic multi-user portfolio website.",
-    "img": "./img/web12.png",
+    "img": "./img/web-portofolio-multiuser.png",
     "link": "",
     "tech1": "IconLaravel",
     "tech2": "IconTailwind"
@@ -111,8 +120,8 @@
     "title": "React Tailwind Portofolio.",
     "date": "2023",
     "description": "Website portofolio",
-    "img": "./img/web2.png",
-    "link": "https://gifporto.github.io/porto/",
+    "img": "./img/web-portfolio.png",
+    "link": "https://gifporto.github.io",
     "tech1": "IconReact",
     "tech2": "IconTailwind"
   },
@@ -120,7 +129,7 @@
     "title": "Katalog Produk GiHome.",
     "date": "2023",
     "description": "House sales website.",
-    "img": "./img/web4.png",
+    "img": "./img/web-home.png",
     "link": "https://gihome.pages.dev",
     "tech1": "IconReact",
     "tech2": "IconTailwind"
@@ -129,7 +138,7 @@
     "title": "E-Commerce Produk GiOutfit.",
     "date": "2023",
     "description": "Clothing sales catalog website.",
-    "img": "./img/web5.png",
+    "img": "./img/web-outfit.png",
     "link": "https://gioutfit.pages.dev",
     "tech1": "IconReact",
     "tech2": "IconTailwind"
@@ -138,7 +147,7 @@
     "title": "Real Estate.",
     "date": "2023",
     "description": "Multi-user house sales website.",
-    "img": "./img/web6.png",
+    "img": "./img/web-realEstate.png",
     "link": "https://fullstack-react-omega.vercel.app/",
     "tech1": "IconReact",
     "tech2": "IconJava"
@@ -147,7 +156,7 @@
     "title": "Web Profile Dykta Sticker.",
     "date": "2023",
     "description": "The profile website showcases the sticker products being offered.",
-    "img": "./img/web3.png",
+    "img": "./img/web-dykta.png",
     "link": "https://gifporto.github.io/dyktasticker",
     "tech1": "IconReact",
     "tech2": "IconTailwind"

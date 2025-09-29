@@ -78,7 +78,7 @@ const Sidebar: React.FC<SidebarProps> = ({ dark, toggleDark, activePage, onNavig
   };
 
   return (
-    <nav className="bg-bg-secondary/70 h-full rounded-2xl flex flex-col justify-self-start p-4 gap-8">
+    <nav className="card-glass h-full flex flex-col justify-self-start p-4 gap-8">
       <button
         onClick={toggleDark}
         className="w-12 h-6 flex items-center rounded-full p-1 transition-colors duration-300 bg-bg"
@@ -96,7 +96,7 @@ const Sidebar: React.FC<SidebarProps> = ({ dark, toggleDark, activePage, onNavig
             onClick={() => handleClick(link.key)}
             className={`relative group flex items-center justify-center hover:cursor-pointer ${currentPage === link.key
                 ? "text-primary drop-shadow-lg drop-shadow-primary"
-                : "text-gray-500 hover:text-primary hover:drop-shadow-lg hover:drop-shadow-primary"
+                : "text-text-secondary hover:text-primary hover:drop-shadow-lg hover:drop-shadow-primary"
               }`}
           >
             {link.icon}

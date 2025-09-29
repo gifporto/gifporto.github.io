@@ -87,9 +87,9 @@ const Topbar: React.FC<TopbarProps> = ({ onNavigate }) => {
           </div>
 
           {/* Card dengan background SVG */}
-          <div className="w-full h-fit relative px-6 py-6 xl:py-4 shadow-xl rounded-xl overflow-hidden">
+          <div className="w-full h-fit relative px-6 py-6 xl:py-4 overflow-hidden card-glass">
             {/* SVG Background */}
-            <div className="absolute inset-0 pointer-events-none bg-bg-secondary/70">
+            <div className="absolute inset-0 pointer-events-none ">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 1200 360"
@@ -181,7 +181,7 @@ const Topbar: React.FC<TopbarProps> = ({ onNavigate }) => {
             {services.map((service) => (
               <div
                 key={service.id}
-                className="flex flex-col justify-center py-5 px-2 bg-bg-secondary/70 rounded-xl"
+                className="flex flex-col justify-center py-5 px-2 card-glass"
               >
                 <div className="container mx-auto flex gap-4 items-center p-2">
                   <div className="flex justify-center w-fit text-primary dark:text-primary2 fill-current">

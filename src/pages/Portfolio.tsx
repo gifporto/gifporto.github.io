@@ -103,7 +103,7 @@ const Portfolio = () => {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               {dataFrontend.map((item, i) => (
                 <div key={i} className="flex flex-col items-center">
-                  <div className="bg-bg-secondary flex flex-col justify-between rounded-3xl p-2 h-full">
+                  <div className="card-glass flex flex-col justify-between rounded-3xl p-2 h-full">
                     <div>
                       <a href={item.link} target="blank">
                         <img
@@ -152,7 +152,7 @@ const Portfolio = () => {
                     src={item.img}
                     alt={item.title}
                   />
-                  <div className="bg-bg-secondary rounded-xl p-4 mt-2">
+                  <div className="card-glass rounded-xl p-4 mt-2">
                     <h5 className="text-text font-semibold">{item.title}</h5>
                     <p className="text-text-seconday text-sm mt-1">
                       {item.description}

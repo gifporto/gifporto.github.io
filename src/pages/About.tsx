@@ -121,7 +121,7 @@ const About: React.FC<AboutProps> = ({ onNavigate }) => {
                             {dataFrontend.map((item, i) => (
                                 <div
                                     key={i}
-                                    className="lg:min-w-[43%] min-w-[85%] bg-bg-secondary flex flex-col justify-between rounded-3xl p-2"
+                                    className="lg:min-w-[43%] min-w-[85%] card-glass flex flex-col justify-between p-2"
                                 >
                                     <div>
                                         <a href={item.link} target="blank">
@@ -205,7 +205,7 @@ const About: React.FC<AboutProps> = ({ onNavigate }) => {
                             {dataCertif.map((certif, i) => (
                                 <div
                                     key={i}
-                                    className="lg:min-w-[43%] min-w-[85%] bg-gradient-to-t from-bg-secondary to-100% rounded-xl"
+                                    className="lg:min-w-[43%] min-w-[85%] bg-gradient-to-t card-glass to-100% rounded-xl"
                                 >
                                     <img
                                         className="w-screen transition duration-500 rounded-xl"
@@ -249,7 +249,7 @@ const About: React.FC<AboutProps> = ({ onNavigate }) => {
                 {/* Clients */}
                 <div className="w-full md:w-2/3 xl:w-2/5 xl:px-0 px-2">
                     <h4 className="text-text text-xl font-semibold mb-2">Clients</h4>
-                    <div className="relative z-10 w-full bg-slate-800/70 rounded-xl py-4 flex justify-center">
+                    <div className="relative z-10 w-full bg-slate-800/70 rounded-xl py-4 flex justify-center bg-gradient-to-tr from-transparent to-white/10 border-t-2 border-r-2 border-1 border-text/10">
                         <div className="grid xl:grid-cols-1 grid-cols-2 gap-4">
                             {dataClient.slice(1).map((card, i) => (
                                 <div key={i}>
@@ -266,10 +266,10 @@ const About: React.FC<AboutProps> = ({ onNavigate }) => {
                     </div>
                 </div>
 
-                {/* Services */}
+                {/* Technology */}
                 <div className="w-full md:w-1/3 xl:w-3/5 xl:px-0 px-2">
                     <h4 className="text-text text-xl font-semibold mb-2">Technology</h4>
-                    <div className="relative overflow-hidden px-4 py-6 bg-bg-secondary/70 shadow-xl rounded-xl">
+                    <div className="relative overflow-hidden px-4 py-6 card-glass">
                         <div className="flex flex-wrap gap-2 relative">
                             {dataTech.map((item, i) => (
                                 <div key={i}>

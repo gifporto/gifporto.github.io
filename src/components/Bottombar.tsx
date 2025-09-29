@@ -78,7 +78,7 @@ const Bottombar: React.FC<SidebarProps> = ({ dark, toggleDark, activePage, onNav
   };
 
   return (
-    <nav className="bg-bg-secondary/95 shadow-lg shadow-primary/30 rounded-xl p-4 w-full">
+    <nav className="shadow-lg shadow-primary/30 rounded-xl p-4 w-full card-glass">
       <div className="flex justify-between">
         <button
           onClick={toggleDark}
@@ -97,7 +97,7 @@ const Bottombar: React.FC<SidebarProps> = ({ dark, toggleDark, activePage, onNav
               onClick={() => handleClick(link.key)}
               className={`relative group flex items-center justify-center hover:cursor-pointer ${currentPage === link.key
                 ? "text-primary drop-shadow-lg drop-shadow-primary"
-                : "text-gray-500 hover:text-primary hover:drop-shadow-lg hover:drop-shadow-primary"
+                : "text-text-secondary hover:text-primary hover:drop-shadow-lg hover:drop-shadow-primary"
                 }`}
             >
               {link.icon}
