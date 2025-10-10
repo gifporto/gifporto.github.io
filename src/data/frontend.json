@@ -66,7 +66,7 @@
     "title": "CSR GunungKidul.",
     "date": "2024",
     "description": "Website for funding applications for community activities in Gunung Kidul.",
-    "img": "./img/web-csr-gunkid.png",
+    "img": "./img/web-csr.png",
     "link": "",
     "tech1": "IconCodeIgniter",
     "tech2": "IconBotstrap"
