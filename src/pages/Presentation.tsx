@@ -66,7 +66,7 @@ const Resume: React.FC = () => {
                 <div
                     ref={printRef}
                     id="print-area"
-                    className="bg-white p-4 sm:p-6 xl:p-8 text-slate-900 w-full rounded-lg"
+                    className="bg-white overflow-hidden p-4 sm:p-6 xl:p-8 text-slate-900 w-full rounded-lg"
                 >
                     {/* About me */}
                     <section className="pt-2">
