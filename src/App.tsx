@@ -3,6 +3,7 @@ import About from "@/pages/About";
 import Portfolio from "@/pages/Portfolio";
 import Certificates from "@/pages/Certificates";
 import Resume from "@/pages/Resume";
+import Presentation from "@/pages/Presentation";
 import Topbar from "@/components/Topbar";
 import Sidebar from "@/components/Sidebar";
 import Bottombar from "@/components/Bottombar";
@@ -35,6 +36,8 @@ const App: React.FC = () => {
         return <Certificates />;
       case "resume":
         return <Resume />;
+      case "presentation":
+        return <Presentation />;
       default:
         return <About onNavigate={setActivePage} />;
     }
